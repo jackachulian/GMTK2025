@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     
     public Scene[] levels;
 
+    public static Level currentLevel;
+
     private void Awake()
     {
         if (Instance != null)
