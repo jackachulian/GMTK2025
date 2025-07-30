@@ -7,7 +7,7 @@ ScriptedImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  script: {instanceID: 0}
   importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
@@ -125,7 +125,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: tileset
     originalName: 
-    pivot: {x: 0.8, y: -3.0634923}
+    pivot: {x: 0.8, y: -1.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -134,8 +134,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 160
-      height: 63
-    spriteID: d208970d3c56c1a40a49bfa4453bbf0a
+      height: 96
+    spriteID: 382f82efdd546d1479900d58bc09ea2d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -163,10 +163,10 @@ ScriptedImporter:
       additiveSortOrder: 0
       cellRect:
         x: 0
-        y: 193
+        y: 160
         width: 160
-        height: 63
-      spriteId: d208970d3c56c1a40a49bfa4453bbf0a
+        height: 96
+      spriteId: 382f82efdd546d1479900d58bc09ea2d
     linkedCells: []
     parentIndex: -1
   platformSettings:
