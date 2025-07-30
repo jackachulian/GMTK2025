@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -15,8 +16,9 @@ public class GameManager : MonoBehaviour
 
     public static InputSystemActions actions;
 
-    
-    public Scene[] levels;
+    public static int CurrentLevelIndex {get; private set;} = 0;
+
+    public SceneAsset[] levels;
 
     private void Awake()
     {
@@ -48,5 +50,20 @@ public class GameManager : MonoBehaviour
         Debug.Log("Warp disabled");
         _isWarping = false;
         OnIsWarpingChanged?.Invoke(_isWarping);
+    }
+
+    public void StartGame()
+    {
+        CurrentLevelIndex = 0;
+        SceneManager.LoadScene(levels[0].name);
+    }
+
+    public void EndLevel()
+    {
+        CurrentLevelIndex++;
+        Debug.Log(CurrentLevelIndex);
+        if (CurrentLevelIndex >= levels.Length) SceneManager.LoadScene("End");
+        else SceneManager.LoadScene(levels[CurrentLevelIndex].name);
+        
     }
 }
