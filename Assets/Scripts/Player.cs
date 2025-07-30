@@ -15,14 +15,11 @@ public class Player2D : MonoBehaviour
     private bool grounded = false;
 
     [SerializeField] private float _groundAcceleration;
-    [SerializeField] private float _airAcceleration;
     [SerializeField] private float _groundMaxVel;
-    [SerializeField] private float _airMaxVel;
     [SerializeField] private float _friction;
     [SerializeField] private float _maxFallSpeed;
     [SerializeField] private float _gravity;
     [SerializeField] private float _jumpVel;
-    [SerializeField] private float _airControl;
     [SerializeField] private float _jumpControl;
 
     // time of reduced air control after walljump
@@ -45,6 +42,7 @@ public class Player2D : MonoBehaviour
 
     private bool respawnedThisTick;
 
+    private Vector2 _lastDelta;
 
     void Start()
     {
@@ -65,7 +63,7 @@ public class Player2D : MonoBehaviour
         _wallJumpTimer -= Time.deltaTime;
 
         // Player movement
-        Vector2 delta = Move(_moveInputDir, _rigidbody.linearVelocity + applyForce);
+        Vector2 delta = Move(_moveInputDir, _lastDelta + applyForce);
         applyForce = Vector3.zero;
 
         // Jump logic
@@ -83,6 +81,10 @@ public class Player2D : MonoBehaviour
                 ApplyForce(new Vector2(-_moveInputDir.x * _wallJumpLateralForce, 0));
             }
         }
+        else if (grounded)
+        {
+            delta.y = 0f;
+        }
 
         delta.y -= _gravity;
 
@@ -98,6 +100,7 @@ public class Player2D : MonoBehaviour
         respawnedThisTick = false;
 
         _rigidbody.linearVelocity = delta;
+        _lastDelta = delta;
     }
 
     public void ApplyForce(Vector2 f)
@@ -113,19 +116,12 @@ public class Player2D : MonoBehaviour
     /// <param name="acceleration"></param>
     /// <param name="maxVel"></param>
     /// <returns></returns>
-    private Vector3 AddAcceleration(Vector3 inputDir, Vector3 currentVel, float acceleration, float maxVel)
+    private Vector2 AddAcceleration(Vector2 inputDir, Vector2 currentVel, float acceleration, float maxVel)
     {
-        float projectedVel = Vector2.Dot(currentVel * Time.fixedDeltaTime, inputDir);
-        float accelVel = acceleration * Time.fixedDeltaTime;
-        maxVel *= Time.fixedDeltaTime;
+        Vector2 v = new((currentVel + inputDir * acceleration).x, currentVel.y);
+        // if (Vector2.Scale(v, lateralVector).magnitude > maxVel) v.x = maxVel * Mathf.Sign(v.x);
 
-        // Cap max accel
-        if (projectedVel + accelVel > maxVel)
-        {
-            accelVel = maxVel - projectedVel;
-        }
-        
-        return new Vector2((currentVel * Time.fixedDeltaTime + inputDir * accelVel).x, currentVel.y);
+        return v;
     }
 
     /// <summary>
@@ -140,18 +136,10 @@ public class Player2D : MonoBehaviour
         bool useGroundPhys = groundedLastTick && grounded;
 
         // Run current state movement
-        if (useGroundPhys)
-        {
-            return GroundMove(inputDir, currentVel);
-        }
-        else
-        {
-            return AirMove(inputDir, currentVel);
-        }
-
+        return GroundMove(inputDir, currentVel, (inputDir.x * currentVel.x < 0 && !useGroundPhys) ? 0.25f : 1f);
     }
 
-    private Vector2 GroundMove(Vector2 inputDir, Vector2 currentVel)
+    private Vector2 GroundMove(Vector2 inputDir, Vector2 currentVel, float control)
     {
         // Apply friction
         Vector2 lateralVel = Vector2.Scale(currentVel, lateralVector);
@@ -159,28 +147,13 @@ public class Player2D : MonoBehaviour
         {
             float d = lateralVel.magnitude * _friction * Time.fixedDeltaTime;
             currentVel.x *= Mathf.Max(lateralVel.magnitude - d, 0) / lateralVel.magnitude;
-        }
+        } 
 
         return AddAcceleration(
             inputDir,
             currentVel,
-            _groundAcceleration,
+            _groundAcceleration * control,
             _groundMaxVel
-            );
-    }
-
-    private Vector2 AirMove(Vector2 inputDir, Vector2 currentVel)
-    {
-        // Air control
-        // TODO: reduce air control after walljump
-        float control = _airControl * Mathf.Max(_wallJumpRecoveryTime - _wallJumpTimer, 0) / _wallJumpRecoveryTime;
-        // currentVel.x *= control;
-
-        return AddAcceleration(
-            inputDir,
-            currentVel,
-            _airAcceleration * control,
-            _airMaxVel
             );
     }
 
