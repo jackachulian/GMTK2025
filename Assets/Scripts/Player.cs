@@ -118,8 +118,6 @@ public class Player2D : MonoBehaviour
     /// <returns></returns>
     private Vector2 AddAcceleration(Vector2 inputDir, Vector2 currentVel, float acceleration, float maxVel)
     {
-        Debug.Log(currentVel.x);
-
         Vector2 v = new((currentVel + inputDir * acceleration).x, currentVel.y);
         // if (Vector2.Scale(v, lateralVector).magnitude > maxVel) v.x = maxVel * Mathf.Sign(v.x);
 
