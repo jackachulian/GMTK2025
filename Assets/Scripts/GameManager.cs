@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,8 +15,16 @@ public class GameManager : MonoBehaviour
 
     public static InputSystemActions actions;
 
+    
+    public Scene[] levels;
+
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
 
         actions = new InputSystemActions();
