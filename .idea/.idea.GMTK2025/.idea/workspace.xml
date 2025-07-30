@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed8efcf1-88d2-499e-a806-122d57b856a5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK2025/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WarpWallTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WarpWallTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystemActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystemActions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/WarpWall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WarpWall.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/tileset.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/tileset.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/tileset.aseprite.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/tileset.aseprite.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/tileset.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/tileset.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/tileset.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/tileset.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tileset.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tileset.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +34,7 @@
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/TestLevel.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scripts/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Sprites/tileset.aseprite.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@c854d1f7d97f/Editor/Inspector/DrawInspectorOperations.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -128,7 +126,7 @@
       <option name="presentableId" value="Default" />
       <updated>1753899327426</updated>
       <workItem from="1753899337162" duration="1532000" />
-      <workItem from="1753902335708" duration="5660000" />
+      <workItem from="1753902335708" duration="6211000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -170,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753908291406</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Tileset changes">
+      <option name="closed" value="true" />
+      <created>1753908337741</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1753908337741</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +190,17 @@
     <option name="unityProjectFolder" value="true" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -192,7 +209,8 @@
     <MESSAGE value="Worked on test level" />
     <MESSAGE value="Save scene" />
     <MESSAGE value="Wall enabling and disabling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wall enabling and disabling" />
+    <MESSAGE value="Tileset changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tileset changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

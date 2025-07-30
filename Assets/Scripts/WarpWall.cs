@@ -22,7 +22,7 @@ public class WarpWall : MonoBehaviour
     private void FixedUpdate()
     {
         if (_currentTargetLocalPosition == wall.transform.localPosition) return;
-        Vector2 newPos = Vector2.MoveTowards(wall.transform.localPosition, _currentTargetLocalPosition, moveSpeed);
+        Vector2 newPos = Vector2.MoveTowards(wall.transform.localPosition, _currentTargetLocalPosition, moveSpeed * Time.deltaTime);
         wall.transform.localPosition = newPos;
     }
 
