@@ -7,7 +7,7 @@ ScriptedImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-  script: {instanceID: 0}
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
   importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
@@ -72,11 +72,11 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
-    fileImportMode: 1
+    fileImportMode: 0
     importHiddenLayers: 0
-    layerImportMode: 1
-    defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    layerImportMode: 0
+    defaultPivotSpace: 1
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -85,11 +85,11 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
-    fileImportMode: 1
+    fileImportMode: 0
     importHiddenLayers: 0
-    layerImportMode: 1
-    defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    layerImportMode: 0
+    defaultPivotSpace: 1
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -98,7 +98,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638894813275644478
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -125,17 +125,17 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: tileset
     originalName: 
-    pivot: {x: 0.8, y: -1.6666667}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4
+      x: 0
+      y: 0
       width: 160
-      height: 96
-    spriteID: 382f82efdd546d1479900d58bc09ea2d
+      height: 63
+    spriteID: 213ad4c12610fb84db618058ec647621
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,30 +143,30 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 0, y: 0}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 1856759510
+      value0: 4287466680
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: tileset
-    layerFlags: 0
+    name: Layer 1
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: tileset
+    - name: Layer 1
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
-        y: 160
+        y: 193
         width: 160
-        height: 96
-      spriteId: 382f82efdd546d1479900d58bc09ea2d
+        height: 63
+      spriteId: 4412753cfb5566b4ea27b257189d5889
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -174,6 +174,30 @@ ScriptedImporter:
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
