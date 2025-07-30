@@ -24,10 +24,6 @@ public class CameraController : MonoBehaviour
 
         _maxPos.x = Mathf.Max(_levelBounds.max.x - horzExtent, _minPos.x);
         _maxPos.y = Mathf.Max(_levelBounds.max.y - vertExtent, _minPos.y);
-
-        Debug.Log(_minPos.y);
-        Debug.Log(_maxPos.y);
-
     }
 
     // Update is called once per frame

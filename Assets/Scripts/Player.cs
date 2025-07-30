@@ -79,7 +79,6 @@ public class Player2D : MonoBehaviour
             // Apply lateral force for wall jump
             if (inWallslide)
             {
-                Debug.Log("Wallslide");
                 _wallJumpTimer = _wallJumpRecoveryTime;
                 ApplyForce(new Vector2(-_moveInputDir.x * _wallJumpLateralForce, 0));
             }

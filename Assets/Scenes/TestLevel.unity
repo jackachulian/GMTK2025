@@ -1463,7 +1463,7 @@ TilemapCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3c422084e57bdb040af0bfae667ee6fe, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1542,18 +1542,6 @@ PrefabInstance:
     - target: {fileID: 5296063836362121533, guid: 909616fa7d1ab8b44a5c0549b946826e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8996655891589031412, guid: 909616fa7d1ab8b44a5c0549b946826e, type: 3}
-      propertyPath: _wallSlideSpeed
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8996655891589031412, guid: 909616fa7d1ab8b44a5c0549b946826e, type: 3}
-      propertyPath: _wallJumpLateralForce
-      value: 2475
-      objectReference: {fileID: 0}
-    - target: {fileID: 8996655891589031412, guid: 909616fa7d1ab8b44a5c0549b946826e, type: 3}
-      propertyPath: _wallJumpRecoveryTime
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
