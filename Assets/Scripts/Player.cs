@@ -25,9 +25,17 @@ public class Player2D : MonoBehaviour
     [SerializeField] private float _airControl;
     [SerializeField] private float _jumpControl;
 
+    // time of reduced air control after walljump
+    [SerializeField] private float _wallJumpRecoveryTime;
+    [SerializeField] private float _wallJumpLateralForce;
+    [SerializeField] private float _wallSlideSpeed;
+
+    private float _wallJumpTimer;
+    // private bool _inWallslide;
+
     [SerializeField] private LayerMask _groundMask;
 
-    private Vector3 _moveInputDir = Vector3.zero;
+    private Vector2 _moveInputDir = Vector3.zero;
     private Vector2 lateralVector = new(1, 0);
 
     // Extra force caused by other objects, to be applied next tick
@@ -37,15 +45,10 @@ public class Player2D : MonoBehaviour
 
     private bool respawnedThisTick;
 
+
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        // debugText = GameObject.Find("DebugText").GetComponent<TextMeshProUGUI>();
         GetComponent<PlayerInput>().enabled = true;
-
-        // TODO: Set up camera follower
-        // Camera.main.GetComponent<FollowTransform>().SetToFollow(transform);
-        // Camera.main.GetComponent<FollowTransform>().enabled = true;
         spawnPosition = transform.position;
     }
 
@@ -57,19 +60,29 @@ public class Player2D : MonoBehaviour
     void FixedUpdate()
     {
         grounded = GroundCheck();
+        bool inWallslide = WallslideCheck() && !grounded;
+
+        _wallJumpTimer -= Time.deltaTime;
 
         // Player movement
         Vector2 delta = Move(_moveInputDir, _rigidbody.linearVelocity + applyForce);
         applyForce = Vector3.zero;
 
         // Jump logic
-        if (jumpHeld && !jumpedThisInput && grounded)
+        if (jumpHeld && !jumpedThisInput && (grounded || inWallslide))
         {
             // Apply vertical jump force
             delta.y = _jumpVel * Time.fixedDeltaTime;
 
             jumpedThisInput = true;
-            Debug.Log("Jump");
+
+            // Apply lateral force for wall jump
+            if (inWallslide)
+            {
+                Debug.Log("Wallslide");
+                _wallJumpTimer = _wallJumpRecoveryTime;
+                ApplyForce(new Vector2(-_moveInputDir.x * _wallJumpLateralForce, 0));
+            }
         }
 
         delta.y -= _gravity;
@@ -78,7 +91,7 @@ public class Player2D : MonoBehaviour
         groundedLastTick = grounded;
 
         // Cap fall speed
-        delta.y = Math.Max(delta.y, _maxFallSpeed);
+        delta.y = Math.Max(delta.y, inWallslide ? _wallSlideSpeed : _maxFallSpeed);
 
         if (delta.y > 0 && !jumpHeld) delta.y *= _jumpControl;
 
@@ -161,13 +174,13 @@ public class Player2D : MonoBehaviour
     {
         // Air control
         // TODO: reduce air control after walljump
-        float control = _airControl;
-        currentVel.x *= control;
+        float control = _airControl * Mathf.Max(_wallJumpRecoveryTime - _wallJumpTimer, 0) / _wallJumpRecoveryTime;
+        // currentVel.x *= control;
 
         return AddAcceleration(
             inputDir,
             currentVel,
-            _airAcceleration,
+            _airAcceleration * control,
             _airMaxVel
             );
     }
@@ -214,8 +227,15 @@ public class Player2D : MonoBehaviour
         Vector2 origin = transform.position;
         Vector2 offset = transform.right * _collider.size.x / 2f;
         return 
-            Physics2D.Raycast(origin, Vector3.down, dist, _groundMask) 
-            || Physics2D.Raycast(origin + offset, Vector3.down, dist, _groundMask)
-            || Physics2D.Raycast(origin - offset, Vector3.down, dist, _groundMask);
+            Physics2D.Raycast(origin, Vector2.down, dist, _groundMask) 
+            || Physics2D.Raycast(origin + offset, Vector2.down, dist, _groundMask)
+            || Physics2D.Raycast(origin - offset, Vector2.down, dist, _groundMask);
+    }
+
+    private bool WallslideCheck()
+    {
+        float dist = _collider.size.x * 0.5f + 0.1f;
+        return 
+            Physics2D.Raycast(transform.position, Vector2.right * Mathf.Sign(_moveInputDir.x), dist, _groundMask);
     }
 }
