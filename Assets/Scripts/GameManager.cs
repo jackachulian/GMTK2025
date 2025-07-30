@@ -1,18 +1,43 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
-    private bool _isWarping;
+    public static GameManager Instance { get; private set; }
+    
+    
+    private static bool _isWarping;
+    public static bool IsWarping => _isWarping;
+    
+    public static event Action<bool> OnIsWarpingChanged;
 
-    public bool IsWarping
+    public static InputSystemActions actions;
+
+    private void Awake()
     {
-        get => _isWarping;
-        set
-        {
-            _isWarping = value;
-            OnIsWarpingChanged?.Invoke(value);
-        }
+        Instance = this;
+
+        actions = new InputSystemActions();
+        actions.Player.Enable();
+
+        actions.Player.Warp.performed += OnWarpPerformed;
+        actions.Player.Warp.canceled += OnWarpCanceled;
     }
-    public event Action<bool> OnIsWarpingChanged;
+
+    public void OnWarpPerformed(InputAction.CallbackContext ctx)
+    {
+        if (_isWarping) return;
+        Debug.Log("Warp enabled");
+        _isWarping = true;
+        OnIsWarpingChanged?.Invoke(_isWarping);
+    }
+
+    public void OnWarpCanceled(InputAction.CallbackContext ctx)
+    {
+        if (!_isWarping) return;
+        Debug.Log("Warp disabled");
+        _isWarping = false;
+        OnIsWarpingChanged?.Invoke(_isWarping);
+    }
 }
