@@ -211,11 +211,11 @@ public class Player2D : MonoBehaviour
     private bool GroundCheck()
     {
         float dist = _collider.size.y * 0.56f;
-        Vector3 origin = transform.position;
-        Vector3 offset = transform.forward * _collider.size.x / 2f;
+        Vector2 origin = transform.position;
+        Vector2 offset = transform.right * _collider.size.x / 2f;
         return 
             Physics2D.Raycast(origin, Vector3.down, dist, _groundMask) 
-            || Physics.Raycast(origin + offset, Vector3.down, dist, _groundMask)
-            || Physics.Raycast(origin - offset, Vector3.down, dist, _groundMask);
+            || Physics2D.Raycast(origin + offset, Vector3.down, dist, _groundMask)
+            || Physics2D.Raycast(origin - offset, Vector3.down, dist, _groundMask);
     }
 }
