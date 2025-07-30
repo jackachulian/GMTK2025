@@ -50,14 +50,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 8748843402853663012}
   _collider: {fileID: 6755267933366606411}
-  _groundAcceleration: 175
-  _airAcceleration: 175
-  _groundMaxVel: 300
-  _airMaxVel: 300
-  _friction: 0.1
-  _maxFallSpeed: -20
-  _gravity: 2
-  _jumpVel: 850
+  _groundAcceleration: 400
+  _airAcceleration: 400
+  _groundMaxVel: 600
+  _airMaxVel: 600
+  _friction: 0
+  _maxFallSpeed: -30
+  _gravity: 3
+  _jumpVel: 1650
   _airControl: 1
   _jumpControl: 0.4
   _groundMask:
@@ -109,7 +109,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3c422084e57bdb040af0bfae667ee6fe, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -130,7 +130,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3c422084e57bdb040af0bfae667ee6fe, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 1
