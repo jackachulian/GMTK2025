@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed8efcf1-88d2-499e-a806-122d57b856a5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Bescii-Basic.ttf.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Bescii-Basic.ttf.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/bescii-chars.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/bescii-chars.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK2025/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WarpWall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WarpWall.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/tileset.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/tileset.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/tileset.aseprite.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/tileset.aseprite.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/tileset.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/tileset.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tileset.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tileset.prefab.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +34,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Fonts/Bescii-Basic.ttf.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/TestLevel.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scripts/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -202,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753916222913</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Main menu pixel font">
+      <option name="closed" value="true" />
+      <created>1753916667739</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1753916667739</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +251,8 @@
     <MESSAGE value="Added more walls" />
     <MESSAGE value="Simple main menu" />
     <MESSAGE value="Pixel font" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pixel font" />
+    <MESSAGE value="Main menu pixel font" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main menu pixel font" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
