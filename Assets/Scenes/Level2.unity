@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8996655891589031412, guid: 909616fa7d1ab8b44a5c0549b946826e, type: 3}
+      propertyPath: projectileSpeed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -862,6 +866,7 @@ GameObject:
   - component: {fileID: 588904659}
   - component: {fileID: 588904658}
   - component: {fileID: 588904661}
+  - component: {fileID: 588904662}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -987,6 +992,56 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &588904662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588904657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86832f84a0cf34eb9b89129d49b7a15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startConfig: {fileID: 11400000, guid: 450a8e910a399432b98807bbfdd5d299, type: 2}
+  crtRenderSettings: {fileID: 11400000, guid: 2d929546960894d169f1999a321e4ff4, type: 2}
+  _runtimeMaterial: {fileID: 0}
+  data:
+    pixelationAmount: 3
+    maxColorChannels:
+      red: 1
+      green: 1
+      blue: 2
+      greyScale: 0.115
+    dithering4: 0
+    dithering8: 0.442
+    vignette: 0.561
+    innerCurve: 4.7
+    monitorCurve: 0.082
+    monitorInnerSize:
+      width: 0
+      height: 0
+    monitorOutterSize:
+      width: 0.058
+      height: 0.1
+    zoom: 1.17
+    monitorRoundness: 0.2
+    monitorTexture: {fileID: 2800000, guid: a5e897f9f29eb488ba4791cd52d004b5, type: 3}
+    monitorColor:
+      r: 0.12867041
+      g: 0.1254902
+      b: 0.21568628
+      a: 0.5254902
+    innerMonitorDarkness: 0.215
+    innerMonitorShine: 0.067
+    colorScans:
+      greenChannelMultiplier: -0.183
+      redBlueChannelMultiplier: 0.173
+      sizeMultiplier: 0.5
+    innerMonitorShineRadius: -0.087
+    innerMonitorShineCurve: 10
+  lastValidationId: a3db752d-a6dc-4375-9ac1-d0824562ffe3
 --- !u!1 &703009969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +1106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &848727114
 MonoBehaviour:
   m_ObjectHideFlags: 0
