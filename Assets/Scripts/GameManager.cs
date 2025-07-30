@@ -1,16 +1,18 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private bool _isWarping;
 
-    // Update is called once per frame
-    void Update()
+    public bool IsWarping
     {
-        
+        get => _isWarping;
+        set
+        {
+            _isWarping = value;
+            OnIsWarpingChanged?.Invoke(value);
+        }
     }
+    public event Action<bool> OnIsWarpingChanged;
 }
