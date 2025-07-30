@@ -14,6 +14,10 @@ public class Player2D : MonoBehaviour
     private bool groundedLastTick = false;
     private bool grounded = false;
 
+    public bool shootingUnlocked; // is set to true if you are allowed to shoot
+    [SerializeField] private float projectileSpeed;
+    [SerializeField] private Rigidbody2D projectile;
+
     [SerializeField] private float _groundAcceleration;
     [SerializeField] private float _groundMaxVel;
     [SerializeField] private float _friction;
@@ -37,7 +41,7 @@ public class Player2D : MonoBehaviour
 
     // Extra force caused by other objects, to be applied next tick
     private Vector2 applyForce = Vector3.zero;
-    
+
     private Vector2 spawnPosition;
 
     private bool respawnedThisTick;
@@ -52,7 +56,10 @@ public class Player2D : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetMouseButtonDown(0) && shootingUnlocked)
+        {
+            Shoot();
+        }
     }
 
     void FixedUpdate()
@@ -147,7 +154,7 @@ public class Player2D : MonoBehaviour
         {
             float d = lateralVel.magnitude * _friction * Time.fixedDeltaTime;
             currentVel.x *= Mathf.Max(lateralVel.magnitude - d, 0) / lateralVel.magnitude;
-        } 
+        }
 
         return AddAcceleration(
             inputDir,
@@ -179,7 +186,7 @@ public class Player2D : MonoBehaviour
         // _rigidbody.enabled = false;
         transform.position = spawnPosition;
         respawnedThisTick = true;
-        
+
         // _rigidbody.enabled = true;
     }
 
@@ -198,8 +205,8 @@ public class Player2D : MonoBehaviour
         float dist = _collider.size.y * 0.56f;
         Vector2 origin = transform.position;
         Vector2 offset = transform.right * _collider.size.x / 2f;
-        return 
-            Physics2D.Raycast(origin, Vector2.down, dist, _groundMask) 
+        return
+            Physics2D.Raycast(origin, Vector2.down, dist, _groundMask)
             || Physics2D.Raycast(origin + offset, Vector2.down, dist, _groundMask)
             || Physics2D.Raycast(origin - offset, Vector2.down, dist, _groundMask);
     }
@@ -207,7 +214,28 @@ public class Player2D : MonoBehaviour
     private bool WallslideCheck()
     {
         float dist = _collider.size.x * 0.5f + 0.1f;
-        return 
+        return
             Physics2D.Raycast(transform.position, Vector2.right * Mathf.Sign(_moveInputDir.x), dist, _groundMask);
     }
+
+    private void Shoot()
+    {
+
+        // setting direction
+        Vector3 shootDirection;
+        shootDirection = Input.mousePosition;
+        shootDirection.z = 0f;
+        shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
+        shootDirection -= transform.position;
+
+        // spawn projectile
+        Rigidbody2D projectileInstance = Instantiate(projectile, transform.position, Quaternion.Euler(new Vector3(0, 0, 0))) as Rigidbody2D;
+        projectileInstance.linearVelocity = new Vector2(shootDirection.x * projectileSpeed, shootDirection.y * projectileSpeed);
+
+
+    }
+
+
+
+
 }
