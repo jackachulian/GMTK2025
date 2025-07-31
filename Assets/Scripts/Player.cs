@@ -8,6 +8,8 @@ public class Player2D : MonoBehaviour
     private Transform cameraTransform;
     [SerializeField] Rigidbody2D _rigidbody;
     [SerializeField] BoxCollider2D _collider;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Animator _animator;
 
     private bool jumpHeld = false;
     private bool jumpedThisInput = false;
@@ -61,6 +63,10 @@ public class Player2D : MonoBehaviour
             Shoot();
         }
     }
+    
+    private static readonly int Running = Animator.StringToHash("running");
+    private static readonly int Grounded = Animator.StringToHash("grounded");
+    private static readonly int YVelocity = Animator.StringToHash("yVelocity");
 
     void FixedUpdate()
     {
@@ -108,6 +114,16 @@ public class Player2D : MonoBehaviour
 
         _rigidbody.linearVelocity = delta;
         _lastDelta = delta;
+        
+        // Animation update
+        if (_moveInputDir.x < 0)
+            _spriteRenderer.flipX = true;
+        else if (_moveInputDir.x > 0)
+            _spriteRenderer.flipX = false;
+        
+        _animator.SetBool(Running, _moveInputDir.magnitude > 0);
+        _animator.SetBool(Grounded, grounded);
+        _animator.SetFloat(YVelocity, delta.y);
     }
 
     public void ApplyForce(Vector2 f)
