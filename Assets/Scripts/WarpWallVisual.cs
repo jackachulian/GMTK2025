@@ -9,11 +9,29 @@ public class WarpWallVisual : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRight;
     [SerializeField] SpriteRenderer spriteTop;
     [SerializeField] SpriteRenderer spriteBottom;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public static WarpWallVisual Instance { get; private set; }
+
+    void Awake()
+    {        
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else 
+            Destroy(gameObject);
+    }
+
     void Start()
     {
+        GameManager.Instance.OnLevelChanged += Setup;
+    }
+
+    void Setup()
+    {
+        Debug.Log("Setup Wall Visual " + GameManager.currentLevel);
         if (GameManager.currentLevel == null) return;
-        Debug.Log("Setup Wall Visual");
         var w = GameManager.currentLevel.levelSize.x;
         var h = GameManager.currentLevel.levelSize.y;
 
@@ -40,6 +58,8 @@ public class WarpWallVisual : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (spriteLeft == null) return;
+
         _fadeTimer -= Time.deltaTime;
         if (_fadeTimer > -1)
         {

@@ -20,7 +20,19 @@ public class GameManager : MonoBehaviour
 
     public SceneAsset[] levels;
 
-    public static Level currentLevel;
+    public event Action OnLevelChanged;
+
+    private static Level _currentLevel;
+    public static Level currentLevel
+    {
+        get {return _currentLevel;}
+        set
+        {
+            _currentLevel = value;
+            Debug.Log("Change Level");
+            Instance.OnLevelChanged?.Invoke();
+        }
+    }
 
     public Texture2D cursorLocked, cursorShoot;
     public GameObject pauseMenu;

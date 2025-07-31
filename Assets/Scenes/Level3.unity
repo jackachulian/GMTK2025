@@ -1631,6 +1631,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 909616fa7d1ab8b44a5c0549b946826e, type: 3}
+--- !u!1001 &769277081
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5684874436820612252, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684874436820612252, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684874436820612252, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684874436820612252, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684874436820612252, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684874436820612252, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684874436820612252, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684874436820612252, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684874436820612252, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684874436820612252, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6342402661219244060, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_Name
+      value: WarpWallEffect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
 --- !u!1001 &926569501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5046,7 +5103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5654165149594216613, guid: d99b82b800aa78d4da88a1ff47a13f46, type: 3}
       propertyPath: orthographic size
-      value: 13.3125
+      value: 16.375
       objectReference: {fileID: 0}
     - target: {fileID: 5654165149594216613, guid: d99b82b800aa78d4da88a1ff47a13f46, type: 3}
       propertyPath: m_BackGroundColor.b
@@ -5174,3 +5231,4 @@ SceneRoots:
   - {fileID: 1964029617}
   - {fileID: 1741985464}
   - {fileID: 926569501}
+  - {fileID: 769277081}
