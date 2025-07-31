@@ -13,7 +13,9 @@ public class CameraController : MonoBehaviour
     {
         // Get component references
         _playerTransform = GameObject.Find("Player").transform;
-        _levelBounds = GameObject.Find("Tilemap").GetComponent<TilemapCollider2D>().bounds;
+
+        var level = FindFirstObjectByType<Level>();
+        _levelBounds = new Bounds(level.levelSize / 2, level.levelSize);
 
         // calculate min and max positions
         var vertExtent = Camera.main.orthographicSize;	
