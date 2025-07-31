@@ -4883,6 +4883,7 @@ MonoBehaviour:
   _destroyParticles: {fileID: 0}
   isShootable: 0
   isPlayerCollidable: 1
+  objectsDestroyOnCollect: []
   collected: 0
 --- !u!61 &8887308107879740947
 BoxCollider2D:
@@ -4900,7 +4901,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
