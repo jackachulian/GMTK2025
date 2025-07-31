@@ -8,6 +8,7 @@ public class Player2D : MonoBehaviour
     private Transform cameraTransform;
     [SerializeField] Rigidbody2D _rigidbody;
     [SerializeField] BoxCollider2D _collider;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Animator _animator;
 
     private bool jumpHeld = false;
@@ -115,6 +116,11 @@ public class Player2D : MonoBehaviour
         _lastDelta = delta;
         
         // Animation update
+        if (_moveInputDir.x < 0)
+            _spriteRenderer.flipX = true;
+        else if (_moveInputDir.x > 0)
+            _spriteRenderer.flipX = false;
+        
         _animator.SetBool(Running, _moveInputDir.magnitude > 0);
         _animator.SetBool(Grounded, grounded);
         _animator.SetFloat(YVelocity, delta.y);

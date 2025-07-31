@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 8748843402853663012}
   _collider: {fileID: 6755267933366606411}
+  _spriteRenderer: {fileID: 4033993772711250961}
   _animator: {fileID: 2279582616581059045}
   shootingUnlocked: 1
   projectileSpeed: 0
