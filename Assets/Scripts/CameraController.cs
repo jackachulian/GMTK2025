@@ -8,6 +8,8 @@ public class CameraController : MonoBehaviour
 
     private Vector2 _minPos;
     private Vector2 _maxPos;
+
+    private Vector3 vel = Vector3.one;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,7 +34,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         // only move if not warping 
-        // if (GameManager.IsWarping
+        if (GameManager.IsWarping) return;
         Vector3 target = transform.position;
         // follow player
         target = _playerTransform.position;
@@ -41,6 +43,6 @@ public class CameraController : MonoBehaviour
         target.y = Mathf.Clamp(target.y, _minPos.y, _maxPos.y);
         
         target.z = -10;
-        transform.position = target;
+        transform.position = Vector3.SmoothDamp(transform.position, target, ref vel, 0.25f);
     }
 }

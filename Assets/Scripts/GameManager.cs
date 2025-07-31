@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     public Texture2D cursorLocked, cursorShoot;
     public GameObject pauseMenu;
 
+    public bool IsScrollingLevel {get; private set;}
+
     private void Awake()
     {
         if (Instance != null)
@@ -58,6 +60,8 @@ public class GameManager : MonoBehaviour
     {
         actions.Player.Warp.performed += OnWarpPerformed;
         actions.Player.Warp.canceled += OnWarpCanceled;
+
+        IsScrollingLevel = GameObject.Find("Main Camera").GetComponent<CameraController>() != null;
     }
 
     private void OnDisable()

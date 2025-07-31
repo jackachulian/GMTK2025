@@ -32,6 +32,17 @@ public class WarpWallVisual : MonoBehaviour
     {
         Debug.Log("Setup Wall Visual " + GameManager.currentLevel);
         if (GameManager.currentLevel == null) return;
+
+        // subscribe to events
+        GameManager.OnIsWarpingChanged += OnWarpChanged;
+        if (GameManager.Instance.IsScrollingLevel) SetPositionsAdaptive();
+        else SetPositions();
+        
+    }
+
+    void SetPositions()
+    {
+       if (GameManager.currentLevel == null) return;
         var w = GameManager.currentLevel.levelSize.x;
         var h = GameManager.currentLevel.levelSize.y;
 
@@ -51,14 +62,40 @@ public class WarpWallVisual : MonoBehaviour
 
         spriteTop.transform.position = new Vector2(w * 0.5f, h - 1f);
         spriteTop.transform.localScale = new Vector2(2, w * 0.5f);
+    }
 
-        // subscribe to events
-        GameManager.OnIsWarpingChanged += OnWarpChanged;
+    void SetPositionsAdaptive()
+    {
+        if (GameManager.currentLevel == null) return;
+        var w = GameManager.currentLevel.levelSize.x;
+        var h = GameManager.currentLevel.levelSize.y;
+
+        var vertExtent = 8.4375f;	
+    	var horzExtent = vertExtent * Screen.width / Screen.height;
+
+        var x = Camera.main.transform.position.x;
+        var y = Camera.main.transform.position.y;
+
+        // set up positions
+        spriteLeft.sharedMaterial.mainTextureScale = new Vector2(3, h * 0.5f);
+        spriteBottom.sharedMaterial.mainTextureScale = new Vector2(2, w * 0.5f);
+
+        spriteLeft.transform.position = new Vector2(1.5f + x - horzExtent, y);
+        spriteLeft.transform.localScale = new Vector2(3, h * 0.5f);
+
+        spriteRight.transform.position = new Vector2(-1.5f + x + horzExtent, y);
+        spriteRight.transform.localScale = new Vector2(3, h * 0.5f);
         
+        spriteBottom.transform.position = new Vector2(x, 1f + y - vertExtent);
+        spriteBottom.transform.localScale = new Vector2(2, w * 0.5f);
+
+        spriteTop.transform.position = new Vector2(x, -1f + y + vertExtent);
+        spriteTop.transform.localScale = new Vector2(2, w * 0.5f);
     }
 
     public void OnWarpChanged(bool b)
     {
+        if (b && GameManager.Instance.IsScrollingLevel) SetPositionsAdaptive();
         targetAlpha = b ? 0.5f : 0f;
         _fadeTimer = _fadeTime;
     }
