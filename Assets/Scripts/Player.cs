@@ -83,7 +83,7 @@ public class Player2D : MonoBehaviour
     void FixedUpdate()
     {
         grounded = GroundCheck();
-        bool inWallslide = WallslideCheck() && !grounded;
+        bool inWallslide = WallslideCheck() && !grounded && _moveInputDir != Vector2.zero;
 
         _wallJumpTimer -= Time.deltaTime;
 
