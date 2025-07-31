@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.25
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4989,6 +4989,7 @@ GameObject:
   - component: {fileID: 6852517631970779145}
   - component: {fileID: 5324305695122449801}
   - component: {fileID: 9007876896580435783}
+  - component: {fileID: 1391553127486217294}
   - component: {fileID: 1626194193125647795}
   m_Layer: 7
   m_Name: Enemy
@@ -5040,6 +5041,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a70f3be76b6b3c4abaf299f80112a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1391553127486217294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586970306037778519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e51d0ab7887cd4f92659d1e7f0557f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 3
+  _pointOffsets:
+  - {x: 0, y: 0}
+  - {x: 4, y: 0}
 --- !u!61 &1626194193125647795
 BoxCollider2D:
   m_ObjectHideFlags: 0
