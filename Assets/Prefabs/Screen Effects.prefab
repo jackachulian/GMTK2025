@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3158586783263575469}
   - component: {fileID: 3550667946356506711}
   m_Layer: 0
-  m_Name: Global Volume
+  m_Name: Screen Effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

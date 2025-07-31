@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+ 
 public class WarpWall : MonoBehaviour
 {
     [SerializeField] private GameObject wall;
