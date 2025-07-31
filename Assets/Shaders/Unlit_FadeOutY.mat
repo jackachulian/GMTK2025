@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Unlit_FadeOutX
+  m_Name: Unlit_FadeOutY
   m_Shader: {fileID: 4800000, guid: f47a5dedfebc3914298063c337169ec4, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -26,7 +26,7 @@ Material:
     m_TexEnvs:
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 3, y: 8.4375}
+        m_Scale: {x: 2, y: 15}
         m_Offset: {x: -1, y: 0}
     m_Ints: []
     m_Floats:

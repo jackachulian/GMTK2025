@@ -37,12 +37,20 @@ public class WarpWallVisual : MonoBehaviour
 
         // set up positions
         spriteLeft.sharedMaterial.mainTextureScale = new Vector2(3, h * 0.5f);
+        spriteBottom.sharedMaterial.mainTextureScale = new Vector2(2, w * 0.5f);
 
         spriteLeft.transform.position = new Vector2(1.5f, h * 0.5f);
         spriteLeft.transform.localScale = new Vector2(3, h * 0.5f);
 
         spriteRight.transform.position = new Vector2(w - 1.5f, h * 0.5f);
         spriteRight.transform.localScale = new Vector2(3, h * 0.5f);
+
+        
+        spriteBottom.transform.position = new Vector2(w * 0.5f, 1f);
+        spriteBottom.transform.localScale = new Vector2(2, w * 0.5f);
+
+        spriteTop.transform.position = new Vector2(w * 0.5f, h - 1f);
+        spriteTop.transform.localScale = new Vector2(2, w * 0.5f);
 
         // subscribe to events
         GameManager.OnIsWarpingChanged += OnWarpChanged;
@@ -66,6 +74,7 @@ public class WarpWallVisual : MonoBehaviour
             float t = 1f - Mathf.Max(_fadeTimer / _fadeTime, 0);
             float a = Mathf.Lerp(spriteLeft.sharedMaterial.GetFloat("_AlphaScale"), targetAlpha, t);
             spriteLeft.sharedMaterial.SetFloat("_AlphaScale", a);
+            spriteBottom.sharedMaterial.SetFloat("_AlphaScale", a);
         }
     }
 }
