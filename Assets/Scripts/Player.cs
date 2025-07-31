@@ -19,6 +19,8 @@ public class Player2D : MonoBehaviour
     public bool shootingUnlocked; // is set to true if you are allowed to shoot
     [SerializeField] private float projectileSpeed;
     [SerializeField] private Rigidbody2D projectile;
+    public int projectilesActive; // how many projectiles you currently have spawned
+    [SerializeField] private int maxProjectilesActive; // the max of how many projectiles you are allowed to have spawned at once
 
     [SerializeField] private float _groundAcceleration;
     [SerializeField] private float _groundMaxVel;
@@ -58,7 +60,7 @@ public class Player2D : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && shootingUnlocked)
+        if (Input.GetMouseButtonDown(0) && shootingUnlocked && maxProjectilesActive > projectilesActive)
         {
             Shoot();
         }
@@ -247,6 +249,8 @@ public class Player2D : MonoBehaviour
         // spawn projectile
         Rigidbody2D projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
         projectileInstance.linearVelocity = new Vector2(shootDirection.x, shootDirection.y).normalized * projectileSpeed;
+        projectileInstance.gameObject.GetComponent<PlayerProjectile>().player = this;
+        projectilesActive++;
 
 
     }

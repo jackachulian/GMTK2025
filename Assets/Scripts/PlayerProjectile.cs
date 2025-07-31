@@ -9,6 +9,7 @@ public class PlayerProjectile : MonoBehaviour
     private Rigidbody2D rb;
     private float spawnedTime; // time object was spawned, will despawn if out for too long
     private Vector2 velocity;
+    public Player2D player;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class PlayerProjectile : MonoBehaviour
 
         if (Time.time - spawnedTime > 10)
         {
+            player.projectilesActive -= 1;
             Destroy(gameObject);
         }
     }
@@ -37,6 +39,7 @@ public class PlayerProjectile : MonoBehaviour
         bounces++;
         if (bounces > 3)
         {
+            player.projectilesActive -= 1;
             Destroy(gameObject);
         }
     }
