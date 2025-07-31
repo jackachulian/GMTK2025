@@ -30,7 +30,7 @@ Material:
         m_Offset: {x: -1, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaScale: 0
+    - _AlphaScale: 4.7115905e-11
     - _Flip: 1
     - _TimeScale: 2
     m_Colors:
