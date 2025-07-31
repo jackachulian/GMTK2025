@@ -73,6 +73,10 @@ public class Player2D : MonoBehaviour
             GameManager.Instance.pauseMenu.SetActive(true);
             Time.timeScale = 0;
         }
+        else if (Input.GetKeyDown(KeyCode.R)) // reset scene
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         
     }
     

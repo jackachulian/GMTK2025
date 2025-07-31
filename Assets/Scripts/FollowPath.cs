@@ -4,8 +4,8 @@ using UnityEngine;
 public class FollowPath : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private Vector2[] _pointOffsets;
-    private int _currentPointIndex = 0;
+    [SerializeField] private Vector2[] _pointOffsets; 
+    private int _currentPointIndex = 0; 
     private Vector3 initialPos;
 
     void Start()
