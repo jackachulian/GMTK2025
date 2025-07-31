@@ -14,11 +14,13 @@ public class WarpWall : MonoBehaviour
         
     private void OnDisable()
     {
-        GameManager.OnIsWarpingChanged += OnIsWarpingChanged;
+        GameManager.OnIsWarpingChanged -= OnIsWarpingChanged;
     }
     
     public void OnIsWarpingChanged(bool isWarping)
     {
+        if (!gameObject) return;
+        
         if (isWarping)
             DisableWall();
         else
