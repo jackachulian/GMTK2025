@@ -4992,7 +4992,7 @@ GameObject:
   - component: {fileID: 1391553127486217294}
   - component: {fileID: 1626194193125647795}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: PathedEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

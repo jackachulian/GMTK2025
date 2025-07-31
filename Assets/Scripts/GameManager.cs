@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
     public static int CurrentLevelIndex {get; private set;} = 0;
 
     public SceneAsset[] levels;
-
-    public static Level currentLevel;
+ 
+    public static Level currentLevel; 
 
     private void Awake()
     {

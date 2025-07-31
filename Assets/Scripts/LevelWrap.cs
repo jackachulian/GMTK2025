@@ -9,8 +9,17 @@ public class LevelWrap : MonoBehaviour
         
         var levelSize = GameManager.currentLevel.levelSize;
 
-        var x = transform.position.x;
-        var y = transform.position.y;
+        transform.position = WrapPosition(transform.position);
+    }
+
+    public static Vector2 WrapPosition(Vector2 pos)
+    {
+        if (!GameManager.currentLevel) return pos;
+
+        var levelSize = GameManager.currentLevel.levelSize;
+
+        var x = pos.x;
+        var y = pos.y;
         if (x < 0)
             x += levelSize.x;
         else if (x > levelSize.x)
@@ -20,6 +29,6 @@ public class LevelWrap : MonoBehaviour
         else if (y > levelSize.y)
             y -= levelSize.y;
 
-        transform.position = new Vector2(x, y);
+        return new Vector2(x, y);
     }
 }
