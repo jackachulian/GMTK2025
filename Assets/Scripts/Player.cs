@@ -245,8 +245,8 @@ public class Player2D : MonoBehaviour
         shootDirection -= transform.position;
 
         // spawn projectile
-        Rigidbody2D projectileInstance = Instantiate(projectile, transform.position, Quaternion.Euler(new Vector3(0, 0, 0))) as Rigidbody2D;
-        projectileInstance.linearVelocity = new Vector2(shootDirection.x * projectileSpeed, shootDirection.y * projectileSpeed);
+        Rigidbody2D projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
+        projectileInstance.linearVelocity = new Vector2(shootDirection.x, shootDirection.y).normalized * projectileSpeed;
 
 
     }
