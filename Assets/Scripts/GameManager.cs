@@ -33,9 +33,18 @@ public class GameManager : MonoBehaviour
 
         actions = new InputSystemActions();
         actions.Player.Enable();
+    }
 
+    private void OnEnable()
+    {
         actions.Player.Warp.performed += OnWarpPerformed;
         actions.Player.Warp.canceled += OnWarpCanceled;
+    }
+    
+    private void OnDisable()
+    {
+        actions.Player.Warp.performed -= OnWarpPerformed;
+        actions.Player.Warp.canceled -= OnWarpCanceled;
     }
 
     public void OnWarpPerformed(InputAction.CallbackContext ctx)
