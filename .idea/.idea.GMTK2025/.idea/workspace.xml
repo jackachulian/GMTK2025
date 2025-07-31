@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed8efcf1-88d2-499e-a806-122d57b856a5" name="Changes" comment="Player spritesheet">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/tileset.aseprite.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/tileset.aseprite.meta" afterDir="false" />
+    <list default="true" id="ed8efcf1-88d2-499e-a806-122d57b856a5" name="Changes" comment="placeholder(?) player model">
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Main Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Main Camera.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/tileset.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/tileset.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/tileset.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/tileset.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +33,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Fonts/Bescii-Basic.ttf.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/Level1.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/Level1.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/TestLevel.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scripts/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -227,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753919901806</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Player spritesheet nd updated bg color">
+      <option name="closed" value="true" />
+      <created>1753922368365</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1753922368365</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +280,9 @@
     <MESSAGE value="Updated tileset" />
     <MESSAGE value="Screen warping script" />
     <MESSAGE value="Player spritesheet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Player spritesheet" />
+    <MESSAGE value="Player spritesheet nd updated bg color" />
+    <MESSAGE value="placeholder(?) player model" />
+    <option name="LAST_COMMIT_MESSAGE" value="placeholder(?) player model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
