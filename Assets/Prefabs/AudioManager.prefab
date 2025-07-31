@@ -50,8 +50,9 @@ MonoBehaviour:
   sfx:
   - name: Jump
     clips:
-    - {fileID: 8300000, guid: fa3e951b66a2f76428156f2934999283, type: 3}
-    pitchRange: {x: 1.1, y: 1.25}
+    - {fileID: 8300000, guid: 423b5ed39e175ce41b6c6b7924f9648f, type: 3}
+    - {fileID: 8300000, guid: 571017a7005cb664685bb853865951a5, type: 3}
+    pitchRange: {x: 0.95, y: 1.05}
   musicSource: {fileID: 847123854019889570}
   sfxSource: {fileID: 5577224687681024620}
 --- !u!1 &3620394208127145604
