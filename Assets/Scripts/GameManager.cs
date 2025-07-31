@@ -29,7 +29,9 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        DontDestroyOnLoad(gameObject);
         Instance = this;
+        CurrentLevelIndex = 0;
 
         actions = new InputSystemActions();
         actions.Player.Enable();
@@ -71,7 +73,6 @@ public class GameManager : MonoBehaviour
 
     public void EndLevel()
     {
-        actions.Player.Disable();
         CurrentLevelIndex++;
         Debug.Log(CurrentLevelIndex);
         if (CurrentLevelIndex >= levels.Length) SceneManager.LoadScene("End");

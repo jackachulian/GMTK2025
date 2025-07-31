@@ -19,7 +19,7 @@ public class WarpWall : MonoBehaviour
     
     public void OnIsWarpingChanged(bool isWarping)
     {
-        if (!gameObject) return;
+        if (!gameObject || !wall) return;
         
         if (isWarping)
             DisableWall();
