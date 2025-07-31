@@ -146,27 +146,27 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   spriteSheetImportData: []
   asepriteLayers:
-  - layerIndex: 0
+  - layerIndex: 1
     uuid:
-      value0: 4287466680
+      value0: 4287466677
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: Layer 1
+    name: Layer 2
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Layer 1
+    - name: Layer 2
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 160
-        width: 220
+        width: 96
         height: 96
-      spriteId: 4412753cfb5566b4ea27b257189d5889
+      spriteId: 7ea43e1099ff1cc4f95e3590b4f0c591
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -210,4 +210,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 256, y: 256}
-  previousTextureSize: {x: 256, y: 128}
+  previousTextureSize: {x: 128, y: 128}
