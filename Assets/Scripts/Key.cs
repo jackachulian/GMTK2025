@@ -6,6 +6,7 @@ public class Key : MonoBehaviour
     [SerializeField] private ParticleSystem _destroyParticles;
     [SerializeField] private bool isShootable;
     [SerializeField] private bool isPlayerCollidable;
+    [SerializeField] GameObject[] objectsDestroyOnCollect;
 
     public bool collected;
     
@@ -14,6 +15,8 @@ public class Key : MonoBehaviour
         if ((other.gameObject.GetComponent<PlayerProjectile>() != null && isShootable) ||
             (other.gameObject.GetComponent<Player2D>() != null || isPlayerCollidable))
         {
+            foreach (GameObject obj in objectsDestroyOnCollect) Destroy(obj); // destroy locked doors on collect
+
             if (_destroyParticles) _destroyParticles.gameObject.transform.parent = null;
             Destroy(gameObject);
             if (_destroyParticles != null) _destroyParticles.Play();
