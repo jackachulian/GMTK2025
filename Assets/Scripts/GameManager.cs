@@ -20,7 +20,9 @@ public class GameManager : MonoBehaviour
 
     public SceneAsset[] levels;
  
-    public static Level currentLevel; 
+    public static Level currentLevel;
+
+    public Texture2D cursorLocked, cursorShoot;
 
     private void Awake()
     {
