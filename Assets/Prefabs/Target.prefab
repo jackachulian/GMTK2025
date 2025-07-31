@@ -4845,7 +4845,7 @@ GameObject:
   - component: {fileID: 5660929961597918019}
   - component: {fileID: 8887308107879740947}
   m_Layer: 0
-  m_Name: Key
+  m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4881,6 +4881,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destroyParticles: {fileID: 0}
+  isShootable: 1
+  isPlayerCollidable: 1
   collected: 0
 --- !u!61 &8887308107879740947
 BoxCollider2D:
@@ -5004,7 +5006,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -679045442339543970, guid: 30cc1e7ca011691428cc2e951146b40b, type: 3}
+  m_Sprite: {fileID: -4998457225571994616, guid: fdb09ea6c5ebc074e89f37ae5ebe3783, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
