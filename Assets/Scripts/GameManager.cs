@@ -73,12 +73,18 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(levels[0].name);
     }
 
+    public void LevelSelect(int level)
+    {
+        CurrentLevelIndex = level;
+        SceneManager.LoadScene(levels[CurrentLevelIndex].name);
+    }
+
     public void EndLevel()
     {
         CurrentLevelIndex++;
         Debug.Log(CurrentLevelIndex);
         if (CurrentLevelIndex >= levels.Length) SceneManager.LoadScene("End");
         else SceneManager.LoadScene(levels[CurrentLevelIndex].name);
-        
+
     }
 }
