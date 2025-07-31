@@ -67,6 +67,13 @@ public class Player2D : MonoBehaviour
         {
             Shoot();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.Instance.pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+        
     }
     
     private static readonly int Running = Animator.StringToHash("running");
@@ -189,12 +196,14 @@ public class Player2D : MonoBehaviour
     {
         Vector2 v = value.Get<Vector2>();
         _moveInputDir.x = v.x;
+        
     }
 
     public void OnJump(InputValue value)
     {
         jumpHeld = value.isPressed;
         jumpedThisInput = false;
+
     }
 
     public void OnRestart(InputValue value)

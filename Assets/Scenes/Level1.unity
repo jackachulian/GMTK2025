@@ -382,6 +382,17 @@ Transform:
   - {fileID: 543110186}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &797394588 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5284286683044150694, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
+  m_PrefabInstance: {fileID: 2495164766065766638}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad76a597d3fb2a04990a61c7b4a77a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &804599925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3753,9 +3764,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2960252763047141197, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4449928154900658369, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6418487021497104022, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 797394588}
+    - target: {fileID: 6418487021497104022, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClosePauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6418487021497104022, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
