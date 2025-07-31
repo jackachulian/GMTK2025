@@ -7,23 +7,36 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    
-    
+
+
     private static bool _isWarping;
     public static bool IsWarping => _isWarping;
-    
+
     public static event Action<bool> OnIsWarpingChanged;
 
     public static InputSystemActions actions;
     
 
-    public int CurrentLevelIndex {get; private set;} = 0;
+    public int CurrentLevelIndex { get; private set; } = 0;
 
     public SceneAsset[] levels;
- 
-    public static Level currentLevel;
+
+    public event Action OnLevelChanged;
+
+    private static Level _currentLevel;
+    public static Level currentLevel
+    {
+        get {return _currentLevel;}
+        set
+        {
+            _currentLevel = value;
+            Debug.Log("Change Level");
+            Instance.OnLevelChanged?.Invoke();
+        }
+    }
 
     public Texture2D cursorLocked, cursorShoot;
+    public GameObject pauseMenu;
 
     private void Awake()
     {
@@ -45,7 +58,7 @@ public class GameManager : MonoBehaviour
         actions.Player.Warp.performed += OnWarpPerformed;
         actions.Player.Warp.canceled += OnWarpCanceled;
     }
-    
+
     private void OnDisable()
     {
         actions.Player.Warp.performed -= OnWarpPerformed;
@@ -55,7 +68,7 @@ public class GameManager : MonoBehaviour
     public void OnWarpPerformed(InputAction.CallbackContext ctx)
     {
         if (_isWarping) return;
-        Debug.Log("Warp enabled"); 
+        Debug.Log("Warp enabled");
         _isWarping = true;
         OnIsWarpingChanged?.Invoke(_isWarping);
     }
@@ -74,6 +87,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(levels[0].name);
     }
 
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void LevelSelect(int level)
     {
         CurrentLevelIndex = level;
@@ -87,5 +105,11 @@ public class GameManager : MonoBehaviour
         if (CurrentLevelIndex >= levels.Length) SceneManager.LoadScene("End");
         else SceneManager.LoadScene(levels[CurrentLevelIndex].name);
 
+    }
+
+    public void ClosePauseMenu()
+    {
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
     }
 }
