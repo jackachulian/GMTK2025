@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     public static InputSystemActions actions;
 
-    public static int CurrentLevelIndex {get; private set;} = 0;
+    public int CurrentLevelIndex {get; private set;} = 0;
 
     public SceneAsset[] levels;
  
