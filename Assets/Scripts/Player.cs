@@ -100,6 +100,7 @@ public class Player2D : MonoBehaviour
         {
             // Apply vertical jump force
             delta.y = _jumpVel * Time.fixedDeltaTime;
+            AudioManager.Instance.PlaySfx("Jump");
 
             jumpedThisInput = true;
 
@@ -270,8 +271,5 @@ public class Player2D : MonoBehaviour
 
 
     }
-
-
-
 
 }
