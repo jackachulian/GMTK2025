@@ -3797,6 +3797,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4902678374284388084, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902678374284388084, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902678374284388084, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902678374284388084, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902678374284388084, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902678374284388084, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902678374284388084, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902678374284388084, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902678374284388084, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 5684874436820612252, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3841,6 +3877,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WarpWallEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 8287978059337610947, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e60a74f140c84724d907ec4ea5fb8dcf, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
