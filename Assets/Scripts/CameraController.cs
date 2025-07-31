@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
         _levelBounds = new Bounds(level.levelSize / 2, level.levelSize);
 
         // calculate min and max positions
-        var vertExtent = Camera.main.orthographicSize;	
+        var vertExtent = 8.4375f;	
     	var horzExtent = vertExtent * Screen.width / Screen.height;
 
         _minPos.x = _levelBounds.min.x + horzExtent;

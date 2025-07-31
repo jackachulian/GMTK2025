@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public static event Action<bool> OnIsWarpingChanged;
 
     public static InputSystemActions actions;
+    
 
     public int CurrentLevelIndex {get; private set;} = 0;
 
