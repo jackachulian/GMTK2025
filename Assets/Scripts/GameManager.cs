@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     public void OnWarpPerformed(InputAction.CallbackContext ctx)
     {
         if (_isWarping) return;
-        Debug.Log("Warp enabled");
+        Debug.Log("Warp enabled"); 
         _isWarping = true;
         OnIsWarpingChanged?.Invoke(_isWarping);
     }
