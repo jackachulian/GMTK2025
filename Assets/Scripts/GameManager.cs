@@ -8,8 +8,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public AudioManager audioManager;
-
     private static bool _isWarping;
     public static bool IsWarping => _isWarping;
 
