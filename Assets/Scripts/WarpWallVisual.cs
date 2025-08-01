@@ -9,6 +9,7 @@ public class WarpWallVisual : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRight;
     [SerializeField] SpriteRenderer spriteTop;
     [SerializeField] SpriteRenderer spriteBottom;
+    [SerializeField] AudioSource loopAudioSource;
 
     public static WarpWallVisual Instance { get; private set; }
 
@@ -115,6 +116,7 @@ public class WarpWallVisual : MonoBehaviour
             float a = Mathf.Lerp(spriteLeft.sharedMaterial.GetFloat("_AlphaScale"), targetAlpha, t);
             spriteLeft.sharedMaterial.SetFloat("_AlphaScale", a);
             spriteBottom.sharedMaterial.SetFloat("_AlphaScale", a);
+            loopAudioSource.volume = a * 0.25f;
         }
     }
 }

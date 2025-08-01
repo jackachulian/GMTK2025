@@ -445,6 +445,18 @@ MonoBehaviour:
     volumeScale: 1
     pitchRange: {x: 1, y: 1}
     sequencePitches: []
+  - name: WarpStart
+    clips:
+    - {fileID: 8300000, guid: 9544e3acc366f884aa13de7f52c52006, type: 3}
+    volumeScale: 1
+    pitchRange: {x: 1, y: 1}
+    sequencePitches: []
+  - name: WarpEnd
+    clips:
+    - {fileID: 8300000, guid: 94e05e34be245c245865dc78383e665e, type: 3}
+    volumeScale: 1
+    pitchRange: {x: 1, y: 1}
+    sequencePitches: []
   musicSource: {fileID: 1887473813004426430}
   maxSounds: 16
 --- !u!1 &6146283199751746442

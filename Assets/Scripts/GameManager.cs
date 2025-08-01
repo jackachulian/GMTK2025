@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour
     {
         if (_isWarping) return;
         Debug.Log("Warp enabled");
+        AudioManager.Instance.PlaySfx("WarpStart");
         _isWarping = true;
         OnIsWarpingChanged?.Invoke(_isWarping);
     }
@@ -86,6 +87,7 @@ public class GameManager : MonoBehaviour
     {
         if (!_isWarping) return;
         Debug.Log("Warp disabled");
+        AudioManager.Instance.PlaySfx("WarpEnd");
         _isWarping = false;
         OnIsWarpingChanged?.Invoke(_isWarping);
     }
