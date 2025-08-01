@@ -54,10 +54,10 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 4033993772711250961}
   _animator: {fileID: 2279582616581059045}
   shootingUnlocked: 1
-  projectileSpeed: 10
+  projectileSpeed: 20
   projectile: {fileID: 1262819897479348779, guid: c472d85c94c54a04285ef407f0be813e, type: 3}
   projectilesActive: 0
-  maxProjectilesActive: 5
+  maxProjectilesActive: 3
   _groundAcceleration: 3
   _groundMaxVel: 6
   _friction: 11

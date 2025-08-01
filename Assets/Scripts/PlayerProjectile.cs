@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.UI;
@@ -5,6 +6,9 @@ using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
 {
+    public int maxBounces = 1;
+    public float maxLifetime = 3f;
+    
     private int bounces = 0; // starts at 0, increased after bouncing, destroy self after certain amount of bounces
     private Rigidbody2D rb;
     private float spawnedTime; // time object was spawned, will despawn if out for too long
@@ -22,9 +26,8 @@ public class PlayerProjectile : MonoBehaviour
     {
         velocity = rb.linearVelocity;
 
-        if (Time.time - spawnedTime > 10)
+        if (Time.time - spawnedTime > maxLifetime)
         {
-            player.projectilesActive -= 1;
             Destroy(gameObject);
         }
     }
@@ -37,14 +40,14 @@ public class PlayerProjectile : MonoBehaviour
 
         Debug.Log("Bounce!");
         bounces++;
-        if (bounces > 3)
+        if (bounces >= maxBounces)
         {
-            player.projectilesActive -= 1;
             Destroy(gameObject);
         }
     }
 
-
-
-
+    private void OnDestroy()
+    {
+        player.projectilesActive -= 1;
+    }
 }

@@ -216,7 +216,6 @@ public class Player2D : MonoBehaviour
     {
         Vector2 v = value.Get<Vector2>();
         _moveInputDir.x = v.x;
-        
     }
 
     public void OnJump(InputValue value)
