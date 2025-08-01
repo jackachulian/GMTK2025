@@ -1926,12 +1926,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8996655891589031412, guid: 909616fa7d1ab8b44a5c0549b946826e, type: 3}
-      propertyPath: projectileSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8996655891589031412, guid: 909616fa7d1ab8b44a5c0549b946826e, type: 3}
-      propertyPath: maxProjectilesActive
-      value: 5
+      propertyPath: shootingUnlocked
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

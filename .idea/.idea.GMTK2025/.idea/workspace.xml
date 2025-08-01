@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed8efcf1-88d2-499e-a806-122d57b856a5" name="Changes" comment="" />
+    <list default="true" id="ed8efcf1-88d2-499e-a806-122d57b856a5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Bescii-Basic SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Bescii-Basic SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BouncePad.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BouncePad.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level5.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level5.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level6.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level6.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level7.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level7.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level8.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level8.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CollapsibleTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CollapsibleTile.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,8 +36,10 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Fonts/Bescii-Basic SDF.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Fonts/Bescii-Basic SDF.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Prefabs/BouncePad.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Prefabs/BouncePad.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Prefabs/GameManager.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/Level1.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/Level2.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/Level2.unity" root0="SKIP_HIGHLIGHTING" />
@@ -135,7 +146,7 @@
       <workItem from="1753973705833" duration="9951000" />
       <workItem from="1753988421359" duration="1018000" />
       <workItem from="1753991786262" duration="2459000" />
-      <workItem from="1754006797283" duration="15376000" />
+      <workItem from="1754006797283" duration="24128000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -425,7 +436,47 @@
       <option name="project" value="LOCAL" />
       <updated>1754064851543</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Level 8">
+      <option name="closed" value="true" />
+      <created>1754076456367</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1754076456367</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Add level 8 to level list">
+      <option name="closed" value="true" />
+      <created>1754076466594</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1754076466594</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Added level8 to build scene list">
+      <option name="closed" value="true" />
+      <created>1754076651784</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1754076651784</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Level 4 adjustments">
+      <option name="closed" value="true" />
+      <created>1754077626649</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1754077626649</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Level 4 and 6 adjustments">
+      <option name="closed" value="true" />
+      <created>1754078032128</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1754078032128</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,11 +504,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Player spritesheet" />
-    <MESSAGE value="Player spritesheet nd updated bg color" />
-    <MESSAGE value="placeholder(?) player model" />
-    <MESSAGE value="Fixed gamemanager" />
-    <MESSAGE value="Tilemap collider optimized" />
     <MESSAGE value="Save scene and player rigidbody interpolate checked" />
     <MESSAGE value="Projectile fix and warp wall collision optimize" />
     <MESSAGE value="Player fixes" />
@@ -478,7 +524,12 @@
     <MESSAGE value="Level 5 and 7 adjustments" />
     <MESSAGE value="removed levelwarp from box" />
     <MESSAGE value="Made warpwallvisual not an instance" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made warpwallvisual not an instance" />
+    <MESSAGE value="Level 8" />
+    <MESSAGE value="Add level 8 to level list" />
+    <MESSAGE value="Added level8 to build scene list" />
+    <MESSAGE value="Level 4 adjustments" />
+    <MESSAGE value="Level 4 and 6 adjustments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Level 4 and 6 adjustments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

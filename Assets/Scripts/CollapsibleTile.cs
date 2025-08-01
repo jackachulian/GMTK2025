@@ -53,7 +53,7 @@ public class CollapsibleTile : MonoBehaviour
     {
         if (_willCollapse)
         {
-            spriteRenderer.transform.localPosition = Random.insideUnitCircle * shakeStrength;
+            if (spriteRenderer) spriteRenderer.transform.localPosition = Random.insideUnitCircle * shakeStrength;
         }
         
         if (_collapsing)
