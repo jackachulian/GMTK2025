@@ -67,6 +67,7 @@ public class WarpWallVisual : MonoBehaviour
     void SetPositionsAdaptive()
     {
         if (GameManager.currentLevel == null) return;
+        
         var w = GameManager.currentLevel.levelSize.x;
         var h = GameManager.currentLevel.levelSize.y;
 
