@@ -52,6 +52,8 @@ public class Player2D : MonoBehaviour
 
     private Vector2 _lastDelta;
 
+    private bool bouncing = false;
+
     void Start()
     {
         GetComponent<PlayerInput>().enabled = true;
@@ -93,6 +95,7 @@ public class Player2D : MonoBehaviour
 
         // Player movement
         Vector2 delta = Move(_moveInputDir, _lastDelta + applyForce);
+        if (applyForce.y > 0) bouncing = true;
         applyForce = Vector3.zero;
 
         // Jump logic
@@ -101,7 +104,6 @@ public class Player2D : MonoBehaviour
             // Apply vertical jump force
             delta.y = _jumpVel * Time.fixedDeltaTime;
             
-
             jumpedThisInput = true;
 
             // Apply lateral force for wall jump
@@ -116,21 +118,21 @@ public class Player2D : MonoBehaviour
                 AudioManager.Instance.PlaySfx("Jump");
             }
         }
-        else if (grounded)
+        else if (grounded && !(delta.y > 0))
         {
             delta.y = 0f;
+            bouncing = false;
         }
 
+        // Apply gravity
         delta.y -= _gravity;
 
-        // Apply gravity
         groundedLastTick = grounded;
-
+        
         // Cap fall speed
         delta.y = Math.Max(delta.y, inWallslide ? _wallSlideSpeed : _maxFallSpeed);
 
-        if (delta.y > 0 && !jumpHeld) delta.y *= _jumpControl;
-
+        if (delta.y > 0 && !jumpHeld && !bouncing) delta.y *= _jumpControl;
         if (respawnedThisTick) delta = Vector3.zero;
         respawnedThisTick = false;
 

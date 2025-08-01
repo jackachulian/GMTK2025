@@ -8,7 +8,7 @@ public class BouncePad : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<Player2D>(out var player))
         {
-            Debug.Log("Bounce");
+            Debug.Log("Bounce Pad");
             player.ApplyForce(forceToApply);
         }
     }
