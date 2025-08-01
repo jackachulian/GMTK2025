@@ -95,7 +95,13 @@ public class Player2D : MonoBehaviour
 
         // Player movement
         Vector2 delta = Move(_moveInputDir, _lastDelta + applyForce);
-        if (applyForce.y > 0) bouncing = true;
+        
+        // If we are applying upward force, set directly to avoid gravity inconsisencies
+        if (applyForce.y > 0)
+        {
+            bouncing = true;
+            delta.y = applyForce.y;
+        }
         applyForce = Vector3.zero;
 
         // Jump logic
@@ -123,7 +129,6 @@ public class Player2D : MonoBehaviour
             delta.y = 0f;
             bouncing = false;
         }
-
         // Apply gravity
         delta.y -= _gravity;
 

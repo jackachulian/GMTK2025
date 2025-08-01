@@ -2053,7 +2053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b16272a586944608d08823db481697d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceToApply: {x: 0, y: 65}
+  forceToApply: {x: 0, y: 25}
 --- !u!4 &583832640
 Transform:
   m_ObjectHideFlags: 0
