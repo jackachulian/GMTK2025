@@ -14,6 +14,7 @@ public class BouncePad : MonoBehaviour
             Debug.Log("Bounce Pad");
             player.ApplyForce(forceToApply);
             collider.enabled = false;
+            AudioManager.Instance.PlaySfx("Bounce");
             if (animator) animator.Play("Bounce");
             await Task.Delay(250);
             collider.enabled = true;
