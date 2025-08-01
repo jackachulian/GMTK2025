@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Sprite[] _tileSprites;
 
-    public bool IsScrollingLevel {get; private set;}
+    public bool IsScrollingLevel {get {return GameObject.Find("Main Camera").GetComponent<CameraController>() != null;}}
 
     private void Awake()
     {
@@ -63,8 +63,6 @@ public class GameManager : MonoBehaviour
     {
         actions.Player.Warp.performed += OnWarpPerformed;
         actions.Player.Warp.canceled += OnWarpCanceled;
-
-        IsScrollingLevel = GameObject.Find("Main Camera").GetComponent<CameraController>() != null;
     }
 
     private void OnDisable()
