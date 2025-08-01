@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceToApply: {x: 0, y: 25}
+  collider: {fileID: 3936869202990802875}
+  animator: {fileID: 0}
 --- !u!212 &445744376884887069
 SpriteRenderer:
   m_ObjectHideFlags: 0
