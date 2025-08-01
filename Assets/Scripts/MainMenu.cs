@@ -12,4 +12,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(s);
     }
+
+    public void PlaySfx(string s)
+    {
+        AudioManager.Instance.PlaySfx(s);
+    }
 }
