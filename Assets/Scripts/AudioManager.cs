@@ -22,15 +22,15 @@ public class AudioManager : MonoBehaviour
         }
         // DontDestroyOnLoad(gameObject);
         Instance = this;
-
-        foreach (var sfx in sfx)
-            sfxPlayCounts[sfx.name] = 0;
     }
 
     void Start()
     {
         GameObject newObject = new();
         AudioSource source = newObject.AddComponent<AudioSource>();
+
+        foreach (var sfx in sfx)
+            sfxPlayCounts[sfx.name] = 0;
         
         for (int i = 0; i < maxSounds; i++)
         {

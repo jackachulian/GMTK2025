@@ -460,6 +460,25 @@ MonoBehaviour:
     volumeScale: 1
     pitchRange: {x: 1, y: 1}
     sequencePitches: []
+  - name: KeyCollect
+    clips:
+    - {fileID: 8300000, guid: f54225490880c334b860c960f014f37f, type: 3}
+    volumeScale: 0.75
+    pitchRange: {x: 1, y: 1}
+    sequencePitches:
+    - 1
+    - 1.19
+    - 1.259
+    - 1.334
+    - 1.498
+    - 1.781
+    - 2
+  - name: Unlock
+    clips:
+    - {fileID: 8300000, guid: 9689d6f8de5bd5e4d81254a1058e89b6, type: 3}
+    volumeScale: 1
+    pitchRange: {x: 1, y: 1}
+    sequencePitches: []
   musicSource: {fileID: 1887473813004426430}
   maxSounds: 16
 --- !u!1 &6146283199751746442

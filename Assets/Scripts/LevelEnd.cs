@@ -56,6 +56,7 @@ public class LevelEnd : MonoBehaviour
     public void Unlock()
     {
         unlocked = true;
+        AudioManager.Instance.PlaySfx("Unlock");
         spriteRenderer.sprite = openSprite;
         unlockedParticleEffects.SetActive(true);
         collider.enabled = true;
