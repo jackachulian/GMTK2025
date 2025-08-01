@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void LevelSelect(int level)
+    public void SelectLevel(int level)
     {
         CurrentLevelIndex = level;
         SceneManager.LoadScene(levels[CurrentLevelIndex].name);
