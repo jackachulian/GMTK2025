@@ -22,6 +22,7 @@ public class WarpWallVisual : MonoBehaviour
         }
         else 
             Destroy(gameObject);
+
     }
 
     void Start()
@@ -80,7 +81,8 @@ public class WarpWallVisual : MonoBehaviour
         var y = Camera.main.transform.position.y;
 
         // setup positions
-        Debug.Log(spriteLeft);
+        if(spriteLeft == null) return;
+
         spriteLeft.sharedMaterial.mainTextureScale = new Vector2(3, h * 0.5f);
         spriteBottom.sharedMaterial.mainTextureScale = new Vector2(2, w * 0.5f);
 
