@@ -404,8 +404,14 @@ MonoBehaviour:
     sequencePitches:
     - 1
     - 1.25
+  - name: Win
+    clips:
+    - {fileID: 8300000, guid: dbc0a39865fdf5a46aace003e87a6dad, type: 3}
+    volumeScale: 1
+    pitchRange: {x: 1, y: 1}
+    sequencePitches: []
   musicSource: {fileID: 1887473813004426430}
-  sfxSource: {fileID: 1482363758880071934}
+  maxSounds: 16
 --- !u!1 &6146283199751746442
 GameObject:
   m_ObjectHideFlags: 0

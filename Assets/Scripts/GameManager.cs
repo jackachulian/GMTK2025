@@ -1,8 +1,10 @@
 using System;
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour
 {
@@ -105,9 +107,48 @@ public class GameManager : MonoBehaviour
     {
         CurrentLevelIndex++;
         Debug.Log(CurrentLevelIndex);
+        StartCoroutine(NextLevel());
+    }
+
+    private IEnumerator NextLevel()
+    {
+        var map = GameObject.Find("Tilemap").GetComponent<Tilemap>();
+
+        AudioManager.Instance.PlaySfx("Transition");
+        int count = map.size.x * map.size.y / 4;
+        // randomize tiles
+        for(int i = 0; i < count; i++)
+        {
+            ReplaceRandomTile(map);
+        }
+        yield return new WaitForSeconds(0.25f);
+        // randomize tiles
+        for(int i = 0; i < count; i++)
+        {
+            ReplaceRandomTile(map);
+        }
+        yield return new WaitForSeconds(0.25f);
+        // randomize tile
+        for(int i = 0; i < count; i++)
+        {
+            ReplaceRandomTile(map);
+        }
+        yield return new WaitForSeconds(0.25f);
+        // randomize tile
+        for(int i = 0; i < count; i++)
+        {
+            ReplaceRandomTile(map);
+        }
         if (CurrentLevelIndex >= levels.Length) SceneManager.LoadScene("End");
         else SceneManager.LoadScene(levels[CurrentLevelIndex].name);
+    }
 
+    private void ReplaceRandomTile(Tilemap map)
+    {
+        map.SetTile(
+            new Vector3Int(UnityEngine.Random.Range(0, map.size.x), UnityEngine.Random.Range(0, map.size.y)), 
+            null
+        );
     }
 
     public void ClosePauseMenu()
