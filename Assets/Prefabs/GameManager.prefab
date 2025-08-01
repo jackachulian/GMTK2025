@@ -360,7 +360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad76a597d3fb2a04990a61c7b4a77a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 1327739538953380233}
   levels:
   - {fileID: 102900000, guid: 260cf77ae50c047429ba2e2529e9216c, type: 3}
   - {fileID: 102900000, guid: 5e48ae27fd1a09549b8e30df41a1fa1c, type: 3}
@@ -382,7 +381,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: []
-  sfx: []
+  sfx:
+  - name: Jump
+    clips:
+    - {fileID: 8300000, guid: 423b5ed39e175ce41b6c6b7924f9648f, type: 3}
+    - {fileID: 8300000, guid: 571017a7005cb664685bb853865951a5, type: 3}
+    volumeScale: 1
+    pitchRange: {x: 0.95, y: 1.05}
+    sequencePitches: []
+  - name: Walljump
+    clips:
+    - {fileID: 8300000, guid: 423b5ed39e175ce41b6c6b7924f9648f, type: 3}
+    - {fileID: 8300000, guid: 571017a7005cb664685bb853865951a5, type: 3}
+    volumeScale: 1
+    pitchRange: {x: 1.25, y: 1.35}
+    sequencePitches: []
+  - name: Step
+    clips:
+    - {fileID: 8300000, guid: ea32245d3e51b504b897ff10cd0d2359, type: 3}
+    volumeScale: 0.25
+    pitchRange: {x: 1, y: 1}
+    sequencePitches:
+    - 1
+    - 1.25
   musicSource: {fileID: 1887473813004426430}
   sfxSource: {fileID: 1482363758880071934}
 --- !u!1 &6146283199751746442
