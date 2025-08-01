@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -21,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     public int CurrentLevelIndex { get; private set; } = 0;
 
-    public SceneAsset[] levels;
+    public string[] levels;
 
     public event Action OnLevelChanged;
 
@@ -93,7 +92,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         CurrentLevelIndex = 0;
-        SceneManager.LoadScene(levels[0].name);
+        SceneManager.LoadScene(levels[0]);
     }
 
     public void GoToMainMenu()
@@ -104,7 +103,7 @@ public class GameManager : MonoBehaviour
     public void SelectLevel(int level)
     {
         CurrentLevelIndex = level;
-        SceneManager.LoadScene(levels[CurrentLevelIndex].name);
+        SceneManager.LoadScene(levels[CurrentLevelIndex]);
     }
 
     public void EndLevel()
@@ -141,7 +140,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         RandomizeTilesHelper(map, coords, count, count * 3);
         if (CurrentLevelIndex >= levels.Length) SceneManager.LoadScene("End");
-        else SceneManager.LoadScene(levels[CurrentLevelIndex].name);
+        else SceneManager.LoadScene(levels[CurrentLevelIndex]);
     }
 
     private void RandomizeTilesHelper(Tilemap map, List<Vector3Int> coords, int count, int offset)

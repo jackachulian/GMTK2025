@@ -1,7 +1,3 @@
-using System;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.UI;
 using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour

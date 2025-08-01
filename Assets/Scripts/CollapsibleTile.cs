@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -27,18 +28,18 @@ public class CollapsibleTile : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<Player2D>(out var player))
         {
-            CollapseAfterDelay();
+            StartCoroutine(CollapseAfterDelay());
         }
     }
 
-    async void CollapseAfterDelay()
+    private IEnumerator CollapseAfterDelay()
     {
-        if (_willCollapse) return;
+        if (_willCollapse) yield return null;
         
         Debug.Log("Collapsing after delay", this);
         _willCollapse = true;
         
-        await Task.Delay(_fallDelayMilliseconds);
+        yield return new WaitForSeconds(_fallDelayMilliseconds / 1000f);
 
         Debug.Log("Collapsing now", this);
         _willCollapse = false;

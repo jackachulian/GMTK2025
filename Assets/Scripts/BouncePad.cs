@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class BouncePad : MonoBehaviour
     public Collider2D collider;
     public Animator animator;
         
-    async void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.TryGetComponent<Player2D>(out var player))
         {
@@ -16,8 +17,13 @@ public class BouncePad : MonoBehaviour
             collider.enabled = false;
             AudioManager.Instance.PlaySfx("Bounce");
             if (animator) animator.Play("Bounce");
-            await Task.Delay(250);
-            collider.enabled = true;
+            StartCoroutine(ReenableCollider());
         }
+    }
+
+    private IEnumerator ReenableCollider()
+    {
+        yield return new WaitForSeconds(0.25f);
+        collider.enabled = true;
     }
 }
