@@ -88,6 +88,8 @@ public class Player2D : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (_rigidbody.bodyType == RigidbodyType2D.Static) return;
+        
         grounded = GroundCheck();
         bool inWallslide = WallslideCheck() && !grounded && _moveInputDir != Vector2.zero;
 

@@ -31,6 +31,7 @@ public class LevelEnd : MonoBehaviour
         if (!unlocked) return;
         GameObject.Find("Player").GetComponent<PlayerInput>().enabled = false;
         GameObject.Find("Player").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        collider.enabled = false;
         StartCoroutine(EndLevel());
     }
 

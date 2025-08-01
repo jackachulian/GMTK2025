@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,7 +18,6 @@ public class GameManager : MonoBehaviour
     public static event Action<bool> OnIsWarpingChanged;
 
     public static InputSystemActions actions;
-    
 
     public int CurrentLevelIndex { get; private set; } = 0;
 
@@ -38,6 +39,8 @@ public class GameManager : MonoBehaviour
 
     public Texture2D cursorLocked, cursorShoot;
     public GameObject pauseMenu;
+
+    [SerializeField] private Sprite[] _tileSprites;
 
     public bool IsScrollingLevel {get; private set;}
 
@@ -113,42 +116,51 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator NextLevel()
     {
+        // Replace tiles in tilemap with randomized ones for glitchy transition effect
         var map = GameObject.Find("Tilemap").GetComponent<Tilemap>();
 
         AudioManager.Instance.PlaySfx("Transition");
         int count = map.size.x * map.size.y / 4;
-        // randomize tiles
-        for(int i = 0; i < count; i++)
+
+        // create randomized list of coordinates to iterate
+        List<Vector3Int> coords = new();
+        for(int i = 0; i < map.size.x; i++)
         {
-            ReplaceRandomTile(map);
+            for (int j = 0; j < map.size.y; j++)
+            {
+                coords.Add(new Vector3Int(i, j));
+            }
         }
+        coords = coords.OrderBy( x => UnityEngine.Random.value ).ToList();
+        
+        RandomizeTilesHelper(map, coords, count, 0);
         yield return new WaitForSeconds(0.25f);
-        // randomize tiles
-        for(int i = 0; i < count; i++)
-        {
-            ReplaceRandomTile(map);
-        }
+        RandomizeTilesHelper(map, coords, count, count);
         yield return new WaitForSeconds(0.25f);
-        // randomize tile
-        for(int i = 0; i < count; i++)
-        {
-            ReplaceRandomTile(map);
-        }
+        RandomizeTilesHelper(map, coords, count, count * 2);
         yield return new WaitForSeconds(0.25f);
-        // randomize tile
-        for(int i = 0; i < count; i++)
-        {
-            ReplaceRandomTile(map);
-        }
+        RandomizeTilesHelper(map, coords, count, count * 3);
         if (CurrentLevelIndex >= levels.Length) SceneManager.LoadScene("End");
         else SceneManager.LoadScene(levels[CurrentLevelIndex].name);
     }
 
-    private void ReplaceRandomTile(Tilemap map)
+    private void RandomizeTilesHelper(Tilemap map, List<Vector3Int> coords, int count, int offset)
     {
+        for (int i = 0; i < count; i++)
+        {
+            ReplaceTile(map, coords[i + offset]);
+        }
+        map.RefreshAllTiles();
+    }
+
+    private void ReplaceTile(Tilemap map, Vector3Int coord)
+    {
+        Tile tile = ScriptableObject.CreateInstance<Tile>();
+        tile.sprite = _tileSprites[UnityEngine.Random.Range(0, _tileSprites.Length)];
+
         map.SetTile(
-            new Vector3Int(UnityEngine.Random.Range(0, map.size.x), UnityEngine.Random.Range(0, map.size.y)), 
-            null
+            coord, 
+            tile
         );
     }
 

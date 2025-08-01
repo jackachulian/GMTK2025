@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 936425407}
   - component: {fileID: 936425406}
   m_Layer: 0
-  m_Name: Tilemap
+  m_Name: WarpWallTilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3724,34 +3724,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1327739538953380233, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
-      propertyPath: sfx.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327739538953380233, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
-      propertyPath: sfx.Array.data[4].name
-      value: Transition
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327739538953380233, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
-      propertyPath: sfx.Array.data[4].volumeScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327739538953380233, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
-      propertyPath: sfx.Array.data[4].pitchRange.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327739538953380233, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
-      propertyPath: sfx.Array.data[4].pitchRange.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327739538953380233, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
-      propertyPath: sfx.Array.data[4].clips.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327739538953380233, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
-      propertyPath: 'sfx.Array.data[4].clips.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 025199b5d37f5774387fd7a0e5367e6c, type: 3}
     - target: {fileID: 2486861052343689869, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.588914
@@ -3799,6 +3771,10 @@ PrefabInstance:
     - target: {fileID: 4449928154900658369, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284286683044150694, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6418487021497104022, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

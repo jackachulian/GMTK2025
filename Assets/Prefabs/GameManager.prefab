@@ -368,6 +368,31 @@ MonoBehaviour:
   cursorLocked: {fileID: 2800000, guid: c32e2c05334fa5c4a8f0735f309df895, type: 3}
   cursorShoot: {fileID: 2800000, guid: 84ea685229d43f74a8a1226aa0a56cb8, type: 3}
   pauseMenu: {fileID: 2960252763047141197}
+  _tileSprites:
+  - {fileID: -6398385859980801758, guid: 8b4476a2744b9c54eb7182051c95a8ab, type: 3}
+  - {fileID: 7942642418574989035, guid: c3bf4d09b7e885941a98b5643db283ba, type: 3}
+  - {fileID: -679045442339543970, guid: 30cc1e7ca011691428cc2e951146b40b, type: 3}
+  - {fileID: -5955238801765171166, guid: d10798a35a4a1164f893667f7807ab4d, type: 3}
+  - {fileID: 344996599, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: -4998457225571994616, guid: fdb09ea6c5ebc074e89f37ae5ebe3783, type: 3}
+  - {fileID: -640648248, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: -958028456, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: 1824638860, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: 728359695, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: 1988063709, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: 285855495, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: 1510501703, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: -1531939704, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: -1625077690, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: 249318203, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: 756707629, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: 756707629, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: 1563905874, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: 1510501703, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: 1372572768, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: 8470756986790018513, guid: d055b4402e59e2d4ca6fc4167749a76f, type: 3}
+  - {fileID: 1805763291, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
+  - {fileID: -587217975, guid: 1ac4398f011365646ba7af47bdb34d54, type: 3}
 --- !u!114 &1327739538953380233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +432,12 @@ MonoBehaviour:
   - name: Win
     clips:
     - {fileID: 8300000, guid: dbc0a39865fdf5a46aace003e87a6dad, type: 3}
+    volumeScale: 1
+    pitchRange: {x: 1, y: 1}
+    sequencePitches: []
+  - name: Transition
+    clips:
+    - {fileID: 8300000, guid: 025199b5d37f5774387fd7a0e5367e6c, type: 3}
     volumeScale: 1
     pitchRange: {x: 1, y: 1}
     sequencePitches: []
