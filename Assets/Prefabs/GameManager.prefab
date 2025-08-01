@@ -479,6 +479,12 @@ MonoBehaviour:
     volumeScale: 1
     pitchRange: {x: 1, y: 1}
     sequencePitches: []
+  - name: Bounce
+    clips:
+    - {fileID: 8300000, guid: a91a811edbccb484898c0f4010069cf5, type: 3}
+    volumeScale: 1
+    pitchRange: {x: 1.1, y: 1.2}
+    sequencePitches: []
   musicSource: {fileID: 1887473813004426430}
   maxSounds: 16
 --- !u!1 &6146283199751746442
