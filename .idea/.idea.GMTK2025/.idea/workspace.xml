@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed8efcf1-88d2-499e-a806-122d57b856a5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BouncePad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BouncePad.cs" afterDir="false" />
-    </list>
+    <list default="true" id="ed8efcf1-88d2-499e-a806-122d57b856a5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,8 +26,11 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Prefabs/BouncePad.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/Level1.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/Level2.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/Level5.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scripts/BouncePad.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Key.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Level.cs" root0="FORCE_HIGHLIGHTING" />
@@ -131,7 +131,7 @@
       <workItem from="1753973705833" duration="9951000" />
       <workItem from="1753988421359" duration="1018000" />
       <workItem from="1753991786262" duration="2459000" />
-      <workItem from="1754006797283" duration="5443000" />
+      <workItem from="1754006797283" duration="9191000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -365,7 +365,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754012819870</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Level 4 adjustments, slightly decreased collider size of player, added a couple tiles to tileset">
+      <option name="closed" value="true" />
+      <created>1754054472549</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1754054472549</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Level 2 and 4 adjustments, bouncepad fix">
+      <option name="closed" value="true" />
+      <created>1754055633466</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1754055633466</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,9 +409,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Wall enabling and disabling" />
-    <MESSAGE value="Tileset changes" />
-    <MESSAGE value="Added more walls" />
     <MESSAGE value="Simple main menu" />
     <MESSAGE value="Pixel font" />
     <MESSAGE value="Main menu pixel font" />
@@ -418,7 +431,10 @@
     <MESSAGE value="Pixel perfect camera disabled" />
     <MESSAGE value="lv5 camera fix size" />
     <MESSAGE value="Bounce pad sprites, not working with player yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bounce pad sprites, not working with player yet" />
+    <MESSAGE value="Level 4 adjustments, slightly decreased collider size of player" />
+    <MESSAGE value="Level 4 adjustments, slightly decreased collider size of player, added a couple tiles to tileset" />
+    <MESSAGE value="Level 2 and 4 adjustments, bouncepad fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Level 2 and 4 adjustments, bouncepad fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b16272a586944608d08823db481697d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceToApply: {x: 0, y: 25}
+  forceToApply: {x: 0, y: 45}
   collider: {fileID: 3936869202990802875}
   animator: {fileID: 0}
 --- !u!212 &445744376884887069
