@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class LevelWrap : MonoBehaviour
 {
@@ -30,7 +31,27 @@ public class LevelWrap : MonoBehaviour
         else if (y > levelSize.y)
             y -= levelSize.y;
 
-        return new Vector2(x, y);
+        Tilemap map = GameObject.Find("Tilemap").GetComponent<Tilemap>();
+        Vector2 newpos = new(x, y);
+        TileBase tile = map.GetTile(map.WorldToCell(newpos));
+
+        // if we will collide with a tile by wrapping, readjust
+        if (tile != null)
+        {
+            x = pos.x;
+            y = pos.y;
+            if (x < 0)
+                x = 0;
+            else if (x > levelSize.x)
+                x = levelSize.x;
+            if (y < 0)
+                y = 0;
+            else if (y > levelSize.y)
+                y = levelSize.y;
+        }
+        newpos = new(x,y);
+
+        return newpos;
     }
 
     public static Vector2 WrapPositionAdaptive(Vector2 pos)
@@ -59,6 +80,26 @@ public class LevelWrap : MonoBehaviour
         else if (y > maxY)
             y -= vertExtent * 2;
 
-        return new Vector2(x, y);
+        Tilemap map = GameObject.Find("Tilemap").GetComponent<Tilemap>();
+        Vector2 newpos = new(x, y);
+        TileBase tile = map.GetTile(map.WorldToCell(newpos));
+
+        // if we will collide with a tile by wrapping, readjust
+        if (tile != null)
+        {
+            x = pos.x;
+            y = pos.y;
+            if (x < minX)
+                x = minX;
+            else if (x > maxX)
+                x = maxX;
+            if (y < minY)
+                y = minY;
+            else if (y > maxY)
+                y = maxY;
+        }
+        newpos = new(x,y);
+
+        return newpos; 
     }
 }
