@@ -26,9 +26,13 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Fonts/Bescii-Basic SDF.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Prefabs/BouncePad.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Prefabs/BouncePad.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/Level1.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/Level2.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/Level2.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/Level2/Global Volume Profile.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/Level5.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scripts/BouncePad.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -131,7 +135,7 @@
       <workItem from="1753973705833" duration="9951000" />
       <workItem from="1753988421359" duration="1018000" />
       <workItem from="1753991786262" duration="2459000" />
-      <workItem from="1754006797283" duration="9191000" />
+      <workItem from="1754006797283" duration="15376000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -381,7 +385,47 @@
       <option name="project" value="LOCAL" />
       <updated>1754055633466</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="level 3 rework">
+      <option name="closed" value="true" />
+      <created>1754059123778</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1754059123778</updated>
+    </task>
+    <task id="LOCAL-00033" summary="WarpWallEffect visua fix and parent under camera transform">
+      <option name="closed" value="true" />
+      <created>1754062601546</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1754062601546</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Level 5 and 7 adjustments">
+      <option name="closed" value="true" />
+      <created>1754063830817</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1754063830817</updated>
+    </task>
+    <task id="LOCAL-00035" summary="removed levelwarp from box">
+      <option name="closed" value="true" />
+      <created>1754063954438</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1754063954438</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Made warpwallvisual not an instance">
+      <option name="closed" value="true" />
+      <created>1754064851543</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1754064851543</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,11 +453,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Simple main menu" />
-    <MESSAGE value="Pixel font" />
-    <MESSAGE value="Main menu pixel font" />
-    <MESSAGE value="Updated tileset" />
-    <MESSAGE value="Screen warping script" />
     <MESSAGE value="Player spritesheet" />
     <MESSAGE value="Player spritesheet nd updated bg color" />
     <MESSAGE value="placeholder(?) player model" />
@@ -434,7 +473,12 @@
     <MESSAGE value="Level 4 adjustments, slightly decreased collider size of player" />
     <MESSAGE value="Level 4 adjustments, slightly decreased collider size of player, added a couple tiles to tileset" />
     <MESSAGE value="Level 2 and 4 adjustments, bouncepad fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Level 2 and 4 adjustments, bouncepad fix" />
+    <MESSAGE value="level 3 rework" />
+    <MESSAGE value="WarpWallEffect visua fix and parent under camera transform" />
+    <MESSAGE value="Level 5 and 7 adjustments" />
+    <MESSAGE value="removed levelwarp from box" />
+    <MESSAGE value="Made warpwallvisual not an instance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made warpwallvisual not an instance" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
