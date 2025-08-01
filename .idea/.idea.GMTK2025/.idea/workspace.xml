@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ed8efcf1-88d2-499e-a806-122d57b856a5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/cursor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/cursor.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/cursor2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/cursor2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +30,12 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Prefabs/Main Camera.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jacka/Unity/GMTK2025/Assets/Scenes/Level5.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Key.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Level.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelEnd.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelEnd.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@c854d1f7d97f/Editor/Inspector/DrawInspectorOperations.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -128,6 +130,8 @@
       <workItem from="1753902335708" duration="8153000" />
       <workItem from="1753973705833" duration="9951000" />
       <workItem from="1753988421359" duration="1018000" />
+      <workItem from="1753991786262" duration="2459000" />
+      <workItem from="1754006797283" duration="1189000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -337,7 +341,23 @@
       <option name="project" value="LOCAL" />
       <updated>1753981006250</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Pixel perfect camera disabled">
+      <option name="closed" value="true" />
+      <created>1753992517219</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1753992517219</updated>
+    </task>
+    <task id="LOCAL-00028" summary="lv5 camera fix size">
+      <option name="closed" value="true" />
+      <created>1753992798776</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1753992798776</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,8 +385,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Tileset and test level" />
-    <MESSAGE value="Worked on test level" />
     <MESSAGE value="Save scene" />
     <MESSAGE value="Wall enabling and disabling" />
     <MESSAGE value="Tileset changes" />
@@ -390,7 +408,9 @@
     <MESSAGE value="Added target, changed orb sprite" />
     <MESSAGE value="level5, larger level should be working" />
     <MESSAGE value="Fix camera controller, only use when room is larger than screen, it is not working otherwise" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix camera controller, only use when room is larger than screen, it is not working otherwise" />
+    <MESSAGE value="Pixel perfect camera disabled" />
+    <MESSAGE value="lv5 camera fix size" />
+    <option name="LAST_COMMIT_MESSAGE" value="lv5 camera fix size" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
