@@ -11,20 +11,6 @@ public class WarpWallVisual : MonoBehaviour
     [SerializeField] SpriteRenderer spriteBottom;
     [SerializeField] AudioSource loopAudioSource;
 
-    public static WarpWallVisual Instance { get; private set; }
-
-    void Awake()
-    {        
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else 
-            Destroy(gameObject);
-
-    }
-
     private Camera _camera;
     void Start()
     {
