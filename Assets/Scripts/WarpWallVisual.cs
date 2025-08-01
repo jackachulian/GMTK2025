@@ -25,9 +25,11 @@ public class WarpWallVisual : MonoBehaviour
 
     }
 
+    private Camera _camera;
     void Start()
     {
         GameManager.Instance.OnLevelChanged += Setup;
+        _camera = Camera.main;
     }
 
     void Setup()
@@ -38,9 +40,6 @@ public class WarpWallVisual : MonoBehaviour
         // subscribe to events
         Debug.Log(spriteLeft);
         GameManager.OnIsWarpingChanged += OnWarpChanged;
-        if (GameManager.Instance.IsScrollingLevel) SetPositionsAdaptive();
-        else SetPositions();
-        
     }
 
     void SetPositions()
@@ -69,7 +68,7 @@ public class WarpWallVisual : MonoBehaviour
 
     void SetPositionsAdaptive()
     {
-        if (GameManager.currentLevel == null) return;
+        if (!GameManager.currentLevel) return;
 
         var w = GameManager.currentLevel.levelSize.x;
         var h = GameManager.currentLevel.levelSize.y;
@@ -77,11 +76,11 @@ public class WarpWallVisual : MonoBehaviour
         var vertExtent = 8.4375f;	
     	var horzExtent = vertExtent * Screen.width / Screen.height;
 
-        var x = Camera.main.transform.position.x;
-        var y = Camera.main.transform.position.y;
+        var x = _camera.transform.position.x;
+        var y = _camera.transform.position.y;
 
         // setup positions
-        if(spriteLeft == null) return;
+        if(!spriteLeft) return;
 
         spriteLeft.sharedMaterial.mainTextureScale = new Vector2(3, h * 0.5f);
         spriteBottom.sharedMaterial.mainTextureScale = new Vector2(2, w * 0.5f);
@@ -101,7 +100,6 @@ public class WarpWallVisual : MonoBehaviour
 
     public void OnWarpChanged(bool b)
     {
-        if (b && GameManager.Instance.IsScrollingLevel) SetPositionsAdaptive();
         targetAlpha = b ? 0.5f : 0f;
         _fadeTimer = _fadeTime;
     }
@@ -109,7 +107,7 @@ public class WarpWallVisual : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spriteLeft == null) return;
+        if (!spriteLeft) return;
 
         _fadeTimer -= Time.deltaTime;
         if (_fadeTimer > -1)
