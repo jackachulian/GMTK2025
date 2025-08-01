@@ -17,4 +17,9 @@ public class MainMenu : MonoBehaviour
     {
         AudioManager.Instance.PlaySfx(s);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
