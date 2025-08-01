@@ -58,7 +58,7 @@ public class Player2D : MonoBehaviour
         spawnPosition = transform.position;
 
         if (shootingUnlocked) Cursor.SetCursor(GameManager.Instance.cursorShoot, new Vector2(0, 0), CursorMode.Auto);
-        else Cursor.SetCursor(GameManager.Instance.cursorLocked, new Vector2(0, 0), CursorMode.Auto);
+        else Cursor.SetCursor(GameManager.Instance.cursorLocked, new Vector2(0, 0), CursorMode.Auto); 
     }
 
     void Update()
