@@ -34,6 +34,7 @@ public class WarpWallVisual : MonoBehaviour
         if (GameManager.currentLevel == null) return;
 
         // subscribe to events
+        Debug.Log(spriteLeft);
         GameManager.OnIsWarpingChanged += OnWarpChanged;
         if (GameManager.Instance.IsScrollingLevel) SetPositionsAdaptive();
         else SetPositions();
@@ -67,7 +68,7 @@ public class WarpWallVisual : MonoBehaviour
     void SetPositionsAdaptive()
     {
         if (GameManager.currentLevel == null) return;
-        
+
         var w = GameManager.currentLevel.levelSize.x;
         var h = GameManager.currentLevel.levelSize.y;
 
@@ -77,7 +78,8 @@ public class WarpWallVisual : MonoBehaviour
         var x = Camera.main.transform.position.x;
         var y = Camera.main.transform.position.y;
 
-        // set up positions
+        // setup positions
+        Debug.Log(spriteLeft);
         spriteLeft.sharedMaterial.mainTextureScale = new Vector2(3, h * 0.5f);
         spriteBottom.sharedMaterial.mainTextureScale = new Vector2(2, w * 0.5f);
 
