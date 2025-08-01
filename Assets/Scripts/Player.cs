@@ -89,7 +89,7 @@ public class Player2D : MonoBehaviour
     void FixedUpdate()
     {
         if (_rigidbody.bodyType == RigidbodyType2D.Static) return;
-        
+
         grounded = GroundCheck();
         bool inWallslide = WallslideCheck() && !grounded && _moveInputDir != Vector2.zero;
 
@@ -190,7 +190,8 @@ public class Player2D : MonoBehaviour
         bool useGroundPhys = groundedLastTick && grounded;
 
         // Run current state movement
-        return GroundMove(inputDir, currentVel, (inputDir.x * currentVel.x < 0 && !useGroundPhys) ? 0.25f : 1f);
+        float airControl = 0.5f - Mathf.Max(_wallJumpTimer, 0) / _wallJumpRecoveryTime * 0.5f;
+        return GroundMove(inputDir, currentVel, (inputDir.x * currentVel.x < 0 && !useGroundPhys) ? airControl : 1f);
     }
 
     private Vector2 GroundMove(Vector2 inputDir, Vector2 currentVel, float control)

@@ -65,7 +65,7 @@ MonoBehaviour:
   _gravity: 2
   _jumpVel: 1300
   _jumpControl: 0.4
-  _wallJumpRecoveryTime: 1
+  _wallJumpRecoveryTime: 1.3
   _wallJumpLateralForce: 40
   _wallSlideSpeed: -3
   _groundMask:
