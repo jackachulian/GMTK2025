@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
     {
         actions.Player.Warp.performed -= OnWarpPerformed;
         actions.Player.Warp.canceled -= OnWarpCanceled;
+        if (Instance == this) Instance = null;
     }
 
     public void OnWarpPerformed(InputAction.CallbackContext ctx)
