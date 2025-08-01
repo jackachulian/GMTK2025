@@ -100,7 +100,7 @@ public class Player2D : MonoBehaviour
         {
             // Apply vertical jump force
             delta.y = _jumpVel * Time.fixedDeltaTime;
-            AudioManager.Instance.PlaySfx("Jump");
+            
 
             jumpedThisInput = true;
 
@@ -109,6 +109,11 @@ public class Player2D : MonoBehaviour
             {
                 _wallJumpTimer = _wallJumpRecoveryTime;
                 ApplyForce(new Vector2(-_moveInputDir.x * _wallJumpLateralForce, 0));
+                AudioManager.Instance.PlaySfx("Walljump");
+            }
+            else
+            {
+                AudioManager.Instance.PlaySfx("Jump");
             }
         }
         else if (grounded)
