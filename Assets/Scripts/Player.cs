@@ -290,6 +290,7 @@ public class Player2D : MonoBehaviour
         projectileInstance.linearVelocity = new Vector2(shootDirection.x, shootDirection.y).normalized * projectileSpeed;
         projectileInstance.gameObject.GetComponent<PlayerProjectile>().player = this;
         projectilesActive++;
+        AudioManager.Instance.PlaySfx("Throw");
 
 
     }
