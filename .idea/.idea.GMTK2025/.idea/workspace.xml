@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed8efcf1-88d2-499e-a806-122d57b856a5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-    </list>
+    <list default="true" id="ed8efcf1-88d2-499e-a806-122d57b856a5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,15 +132,7 @@
       <workItem from="1754006797283" duration="24128000" />
       <workItem from="1754092049676" duration="3573000" />
       <workItem from="1754138627048" duration="1359000" />
-      <workItem from="1754145961259" duration="9319000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial commit">
-      <option name="closed" value="true" />
-      <created>1753899545650</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1753899545651</updated>
+      <workItem from="1754145961259" duration="9734000" />
     </task>
     <task id="LOCAL-00002" summary="Tileset and test level">
       <option name="closed" value="true" />
@@ -528,7 +518,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754159704810</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Re enabled screen edge on level 9, fixed a timescale issue">
+      <option name="closed" value="true" />
+      <created>1754160763477</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1754160763478</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,7 +554,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Fix camera controller, only use when room is larger than screen, it is not working otherwise" />
     <MESSAGE value="Pixel perfect camera disabled" />
     <MESSAGE value="lv5 camera fix size" />
     <MESSAGE value="Bounce pad sprites, not working with player yet" />
@@ -581,7 +578,8 @@
     <MESSAGE value="Adjustments to many levels" />
     <MESSAGE value="Misc improvements" />
     <MESSAGE value="New level 10" />
-    <option name="LAST_COMMIT_MESSAGE" value="New level 10" />
+    <MESSAGE value="Re enabled screen edge on level 9, fixed a timescale issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re enabled screen edge on level 9, fixed a timescale issue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
