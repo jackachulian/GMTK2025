@@ -416,7 +416,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4adf85e3e6c7840973d6058001d455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: []
+  music:
+  - name: BGM1
+    clips:
+    - {fileID: 8300000, guid: bd90b414bc2e3f24d876ed09978c9e48, type: 3}
+    volumeScale: 0
+    pitchRange: {x: 0, y: 0}
+    sequencePitches: []
   sfx:
   - name: Jump
     clips:
@@ -858,7 +864,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.85
   m_Pitch: 1
   Loop: 1
   Mute: 0

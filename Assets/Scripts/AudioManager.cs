@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private int maxSounds = 16;
     private List<AudioSource> sfxSources = new List<AudioSource>();
+    private Sound currentMusic = null;
 
     public static AudioManager Instance;
     private Dictionary<string, int> sfxPlayCounts = new();
@@ -46,9 +47,11 @@ public class AudioManager : MonoBehaviour
         if (s == null) Debug.Log("Invalid music name");
         else
         {
-            musicSource.pitch = UnityEngine.Random.Range(s.pitchRange.x, s.pitchRange.y);
+            if (currentMusic?.name == s.name) return;
+
             musicSource.clip = s.Clip;
             musicSource.Play();
+            currentMusic = s;
         }
 
     }

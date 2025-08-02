@@ -12,5 +12,6 @@ public class Level : MonoBehaviour
         _player = GameObject.FindFirstObjectByType<Player2D>();
         
         GameManager.currentLevel = this;
+        AudioManager.Instance.PlayMusic("BGM1");
     }
 }
