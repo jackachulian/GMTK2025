@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
     {
         CurrentLevelIndex++;
         Debug.Log(CurrentLevelIndex);
-        Time.timeScale = 1f;
+        Time.timeScale = timeScale;
         StartCoroutine(NextLevel());
     }
 

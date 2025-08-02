@@ -40,6 +40,7 @@ public class CollapsibleTile : MonoBehaviour
         _willCollapse = true;
         
         yield return new WaitForSeconds(_fallDelayMilliseconds / 1000f);
+        if (!gameObject || !spriteRenderer) yield return null;
 
         Debug.Log("Collapsing now", this);
         _willCollapse = false;
