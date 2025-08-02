@@ -514,7 +514,21 @@ MonoBehaviour:
     - 1.498
     - 1.781
     - 2
+  - name: Wrap
+    clips:
+    - {fileID: 8300000, guid: 978594082d25b2d47ac2de491886339b, type: 3}
+    volumeScale: 0.5
+    pitchRange: {x: 1, y: 1}
+    sequencePitches:
+    - 1
+    - 1.19
+    - 1.259
+    - 1.334
+    - 1.498
+    - 1.781
+    - 2
   musicSource: {fileID: 1887473813004426430}
+  musicHighPassFilter: {fileID: 9119444992973571357}
   maxSounds: 16
 --- !u!1 &6146283199751746442
 GameObject:
@@ -829,6 +843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6711678727093580898}
   - component: {fileID: 1887473813004426430}
+  - component: {fileID: 9119444992973571357}
   m_Layer: 0
   m_Name: MusicSource
   m_TagString: Untagged
@@ -948,6 +963,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!165 &9119444992973571357
+AudioHighPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8119694207590702552}
+  m_Enabled: 1
+  m_CutoffFrequency: 10
+  m_HighpassResonanceQ: 1
 --- !u!1 &8432131333685880264
 GameObject:
   m_ObjectHideFlags: 0

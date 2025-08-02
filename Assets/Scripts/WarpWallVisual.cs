@@ -10,6 +10,7 @@ public class WarpWallVisual : MonoBehaviour
     [SerializeField] SpriteRenderer spriteTop;
     [SerializeField] SpriteRenderer spriteBottom;
     [SerializeField] AudioSource loopAudioSource;
+    [SerializeField] private float _highPassAmount;
 
     private Camera _camera;
     void Start()
@@ -37,7 +38,7 @@ public class WarpWallVisual : MonoBehaviour
         _fadeTimer = _fadeTime;
     }
 
-    // Update is called once per frame
+    // Update is called once per frames
     void Update()
     {
         if (!spriteLeft) return;
@@ -50,6 +51,7 @@ public class WarpWallVisual : MonoBehaviour
             spriteLeft.sharedMaterial.SetFloat("_AlphaScale", a);
             spriteBottom.sharedMaterial.SetFloat("_AlphaScale", a);
             loopAudioSource.volume = a * 0.25f;
+            AudioManager.Instance.musicHighPassFilter.cutoffFrequency = a * _highPassAmount;
         }
     }
 }

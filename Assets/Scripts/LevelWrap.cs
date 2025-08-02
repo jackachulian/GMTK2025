@@ -51,6 +51,9 @@ public class LevelWrap : MonoBehaviour
         }
         newpos = new(x,y);
 
+        if (pos != newpos)
+            AudioManager.Instance.PlaySfx("Wrap");
+
         return newpos;
     }
 
@@ -99,6 +102,9 @@ public class LevelWrap : MonoBehaviour
                 y = maxY;
         }
         newpos = new(x,y);
+
+        if (pos != newpos)
+            AudioManager.Instance.PlaySfx("Wrap");
 
         return newpos; 
     }
