@@ -68,7 +68,7 @@ MonoBehaviour:
   _jumpControl: 0.4
   _wallJumpRecoveryTime: 1.3
   _wallJumpLateralForce: 40
-  _wallSlideSpeed: -3
+  _wallSlideSpeed: -4.5
   _groundMask:
     serializedVersion: 2
     m_Bits: 1
