@@ -58,7 +58,6 @@ public class GameManager : MonoBehaviour
 
         actions = new InputSystemActions();
         actions.Player.Enable();
-
         Time.timeScale = timeScale;
     }
 
@@ -114,6 +113,7 @@ public class GameManager : MonoBehaviour
     {
         CurrentLevelIndex++;
         Debug.Log(CurrentLevelIndex);
+        Time.timeScale = 1f;
         StartCoroutine(NextLevel());
     }
 
@@ -145,6 +145,7 @@ public class GameManager : MonoBehaviour
         RandomizeTilesHelper(map, coords, count, count * 3);
         if (CurrentLevelIndex >= levels.Length) SceneManager.LoadScene("End");
         else SceneManager.LoadScene(levels[CurrentLevelIndex]);
+        Time.timeScale = timeScale;
     }
 
     private void RandomizeTilesHelper(Tilemap map, List<Vector3Int> coords, int count, int offset)
