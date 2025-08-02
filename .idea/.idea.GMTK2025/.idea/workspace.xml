@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ed8efcf1-88d2-499e-a806-122d57b856a5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EmptyHugeLevel.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EmptyHugeLevel.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EmptyLargeLevel.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EmptyLargeLevel.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level10.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level10.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level10.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level10.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +136,7 @@
       <workItem from="1754006797283" duration="24128000" />
       <workItem from="1754092049676" duration="3573000" />
       <workItem from="1754138627048" duration="1359000" />
-      <workItem from="1754145961259" duration="4643000" />
+      <workItem from="1754145961259" duration="8622000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -517,7 +514,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754152248669</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Misc improvements">
+      <option name="closed" value="true" />
+      <created>1754153513353</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1754153513354</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -545,7 +550,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added target, changed orb sprite" />
     <MESSAGE value="level5, larger level should be working" />
     <MESSAGE value="Fix camera controller, only use when room is larger than screen, it is not working otherwise" />
     <MESSAGE value="Pixel perfect camera disabled" />
@@ -570,7 +574,8 @@
     <MESSAGE value="Level 2 adjustments" />
     <MESSAGE value="Level 3 adjustments" />
     <MESSAGE value="Adjustments to many levels" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjustments to many levels" />
+    <MESSAGE value="Misc improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Misc improvements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
