@@ -1687,6 +1687,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WarpWallEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 6342402661219244060, guid: c2d8beca557b84546b0859fa1ef55692, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -14,74 +14,21 @@ public class WarpWallVisual : MonoBehaviour
     private Camera _camera;
     void Start()
     {
-        GameManager.Instance.OnLevelChanged += Setup;
+        // This script has been repeatidly stuggling to keep references to these for their whole development, i dont get it 
+        spriteLeft = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        spriteBottom = transform.GetChild(1).GetComponent<SpriteRenderer>();
+        spriteTop = transform.GetChild(2).GetComponent<SpriteRenderer>();
+        spriteRight = transform.GetChild(3).GetComponent<SpriteRenderer>();
+        
+        Setup();
         _camera = Camera.main;
     }
 
     void Setup()
     {
-        Debug.Log("Setup Wall Visual " + GameManager.currentLevel);
-        if (GameManager.currentLevel == null) return;
-
         // subscribe to events
         Debug.Log(spriteLeft);
         GameManager.OnIsWarpingChanged += OnWarpChanged;
-    }
-
-    void SetPositions()
-    {
-       if (GameManager.currentLevel == null) return;
-        var w = GameManager.currentLevel.levelSize.x;
-        var h = GameManager.currentLevel.levelSize.y;
-
-        // set up positions
-        spriteLeft.sharedMaterial.mainTextureScale = new Vector2(3, h * 0.5f);
-        spriteBottom.sharedMaterial.mainTextureScale = new Vector2(2, w * 0.5f);
-
-        spriteLeft.transform.position = new Vector2(1.5f, h * 0.5f);
-        spriteLeft.transform.localScale = new Vector2(3, h * 0.5f);
-
-        spriteRight.transform.position = new Vector2(w - 1.5f, h * 0.5f);
-        spriteRight.transform.localScale = new Vector2(3, h * 0.5f);
-
-        
-        spriteBottom.transform.position = new Vector2(w * 0.5f, 1f);
-        spriteBottom.transform.localScale = new Vector2(2, w * 0.5f);
-
-        spriteTop.transform.position = new Vector2(w * 0.5f, h - 1f);
-        spriteTop.transform.localScale = new Vector2(2, w * 0.5f);
-    }
-
-    void SetPositionsAdaptive()
-    {
-        if (!GameManager.currentLevel) return;
-
-        var w = GameManager.currentLevel.levelSize.x;
-        var h = GameManager.currentLevel.levelSize.y;
-
-        var vertExtent = 8.4375f;	
-    	var horzExtent = vertExtent * Screen.width / Screen.height;
-
-        var x = _camera.transform.position.x;
-        var y = _camera.transform.position.y;
-
-        // setup positions
-        if(!spriteLeft) return;
-
-        spriteLeft.sharedMaterial.mainTextureScale = new Vector2(3, h * 0.5f);
-        spriteBottom.sharedMaterial.mainTextureScale = new Vector2(2, w * 0.5f);
-
-        spriteLeft.transform.position = new Vector2(1.5f + x - horzExtent, y);
-        spriteLeft.transform.localScale = new Vector2(3, h * 0.5f);
-
-        spriteRight.transform.position = new Vector2(-1.5f + x + horzExtent, y);
-        spriteRight.transform.localScale = new Vector2(3, h * 0.5f);
-        
-        spriteBottom.transform.position = new Vector2(x, 1f + y - vertExtent);
-        spriteBottom.transform.localScale = new Vector2(2, w * 0.5f);
-
-        spriteTop.transform.position = new Vector2(x, -1f + y + vertExtent);
-        spriteTop.transform.localScale = new Vector2(2, w * 0.5f);
     }
 
     public void OnWarpChanged(bool b)
