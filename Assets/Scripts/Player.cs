@@ -54,13 +54,17 @@ public class Player2D : MonoBehaviour
 
     private bool bouncing = false;
 
+    private AudioSource _wallSlideAudioSource;
+
     void Start()
     {
         GetComponent<PlayerInput>().enabled = true;
         spawnPosition = transform.position;
 
         if (shootingUnlocked) Cursor.SetCursor(GameManager.Instance.cursorShoot, new Vector2(0, 0), CursorMode.Auto);
-        else Cursor.SetCursor(GameManager.Instance.cursorLocked, new Vector2(0, 0), CursorMode.Auto); 
+        else Cursor.SetCursor(GameManager.Instance.cursorLocked, new Vector2(0, 0), CursorMode.Auto);
+
+        _wallSlideAudioSource = GetComponent<AudioSource>(); 
     }
 
     void Update()
@@ -92,6 +96,8 @@ public class Player2D : MonoBehaviour
 
         grounded = GroundCheck();
         bool inWallslide = WallslideCheck() && !grounded && _moveInputDir != Vector2.zero;
+
+        _wallSlideAudioSource.volume = inWallslide ? 0.5f : 0f;
 
         _wallJumpTimer -= Time.deltaTime;
 
