@@ -55,7 +55,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 4033993772711250961}
   _animator: {fileID: 2279582616581059045}
   shootingUnlocked: 1
-  projectileSpeed: 11
+  projectileSpeed: 18
   projectile: {fileID: 1262819897479348779, guid: c472d85c94c54a04285ef407f0be813e, type: 3}
   projectilesActive: 0
   maxProjectilesActive: 5
@@ -68,7 +68,7 @@ MonoBehaviour:
   _jumpControl: 0.4
   _wallJumpRecoveryTime: 1.3
   _wallJumpLateralForce: 40
-  _wallSlideSpeed: -3
+  _wallSlideSpeed: -4.5
   _groundMask:
     serializedVersion: 2
     m_Bits: 1
@@ -362,7 +362,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 4334783836991956000, guid: 68a184131b933a245866001c4a56d7d2, type: 3}
   m_Color: {r: 0.25943398, g: 0.9923562, b: 1, a: 1}
   m_FlipX: 0

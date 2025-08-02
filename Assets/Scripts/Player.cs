@@ -97,6 +97,8 @@ public class Player2D : MonoBehaviour
         grounded = GroundCheck();
         bool inWallslide = WallslideCheck() && !grounded;
 
+        _animator.SetBool("wallslide", inWallslide);
+
         _wallSlideAudioSource.volume = inWallslide ? 0.5f : 0f;
 
         _wallJumpTimer -= Time.deltaTime;
