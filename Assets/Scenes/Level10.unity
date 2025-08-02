@@ -1935,10 +1935,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8996655891589031412, guid: 909616fa7d1ab8b44a5c0549b946826e, type: 3}
-      propertyPath: _jumpVel
-      value: 1400
-      objectReference: {fileID: 0}
-    - target: {fileID: 8996655891589031412, guid: 909616fa7d1ab8b44a5c0549b946826e, type: 3}
       propertyPath: _wallSlideSpeed
       value: -6
       objectReference: {fileID: 0}
