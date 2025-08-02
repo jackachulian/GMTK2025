@@ -360,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad76a597d3fb2a04990a61c7b4a77a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeScale: 0.85
   levels:
   - Level1
   - Level2

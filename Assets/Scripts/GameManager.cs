@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public static InputSystemActions actions;
 
+    public float timeScale = 0.8f;
+
     public int CurrentLevelIndex { get; private set; } = 0;
 
     public string[] levels;
@@ -56,6 +58,8 @@ public class GameManager : MonoBehaviour
 
         actions = new InputSystemActions();
         actions.Player.Enable();
+
+        Time.timeScale = timeScale;
     }
 
     private void OnEnable()
@@ -165,7 +169,7 @@ public class GameManager : MonoBehaviour
 
     public void ClosePauseMenu()
     {
-        Time.timeScale = 1;
+        Time.timeScale = timeScale;
         pauseMenu.SetActive(false);
     }
 }
