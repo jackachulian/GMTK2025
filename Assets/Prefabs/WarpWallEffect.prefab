@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fadeTime: 0.5
+  _fadeToAlpha: 0.35
   spriteLeft: {fileID: 8753672420695310292}
   spriteRight: {fileID: 5878987157912294150}
   spriteTop: {fileID: 6375771264964617822}

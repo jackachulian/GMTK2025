@@ -3,6 +3,7 @@ using UnityEngine;
 public class WarpWallVisual : MonoBehaviour
 {
     [SerializeField] private float _fadeTime = 0.1f;
+    [SerializeField] private float _fadeToAlpha = 0.3f;
     private float _fadeTimer = 0f;
     private float targetAlpha = 0f;
     [SerializeField] SpriteRenderer spriteLeft;
@@ -33,7 +34,7 @@ public class WarpWallVisual : MonoBehaviour
 
     public void OnWarpChanged(bool b)
     {
-        targetAlpha = b ? 0.5f : 0f;
+        targetAlpha = b ? _fadeToAlpha : 0f;
         _fadeTimer = _fadeTime;
     }
 
