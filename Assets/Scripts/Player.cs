@@ -95,7 +95,7 @@ public class Player2D : MonoBehaviour
         if (_rigidbody.bodyType == RigidbodyType2D.Static) return;
 
         grounded = GroundCheck();
-        bool inWallslide = WallslideCheck() && !grounded && _moveInputDir != Vector2.zero;
+        bool inWallslide = WallslideCheck() && !grounded;
 
         _wallSlideAudioSource.volume = inWallslide ? 0.5f : 0f;
 
@@ -124,7 +124,7 @@ public class Player2D : MonoBehaviour
             if (inWallslide)
             {
                 _wallJumpTimer = _wallJumpRecoveryTime;
-                ApplyForce(new Vector2(-_moveInputDir.x * _wallJumpLateralForce, 0));
+                ApplyForce(new Vector2((_spriteRenderer.flipX ? 1 : -1) * _wallJumpLateralForce, 0));
                 AudioManager.Instance.PlaySfx("Walljump");
             }
             else
@@ -270,7 +270,7 @@ public class Player2D : MonoBehaviour
     {
         float dist = _collider.size.x * 0.5f + 0.1f;
         return
-            Physics2D.Raycast(transform.position, Vector2.right * Mathf.Sign(_moveInputDir.x), dist, _groundMask);
+            Physics2D.Raycast(transform.position, Vector2.right * (_spriteRenderer.flipX ? -1 : 1), dist, _groundMask);
     }
 
     private void Shoot()
