@@ -230,6 +230,7 @@ MonoBehaviour:
   spriteTop: {fileID: 6375771264964617822}
   spriteBottom: {fileID: 8287978059337610947}
   loopAudioSource: {fileID: 7187948054203590772}
+  _highPassAmount: 650
 --- !u!82 &7187948054203590772
 AudioSource:
   m_ObjectHideFlags: 0

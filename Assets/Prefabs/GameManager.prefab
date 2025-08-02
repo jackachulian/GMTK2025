@@ -372,6 +372,7 @@ MonoBehaviour:
   - Level8
   - Level9
   - Level10
+  - Level11
   cursorLocked: {fileID: 2800000, guid: c32e2c05334fa5c4a8f0735f309df895, type: 3}
   cursorShoot: {fileID: 2800000, guid: 84ea685229d43f74a8a1226aa0a56cb8, type: 3}
   pauseMenu: {fileID: 2960252763047141197}
@@ -416,7 +417,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4adf85e3e6c7840973d6058001d455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: []
+  music:
+  - name: BGM1
+    clips:
+    - {fileID: 8300000, guid: bd90b414bc2e3f24d876ed09978c9e48, type: 3}
+    volumeScale: 0
+    pitchRange: {x: 0, y: 0}
+    sequencePitches: []
   sfx:
   - name: Jump
     clips:
@@ -508,7 +515,27 @@ MonoBehaviour:
     - 1.498
     - 1.781
     - 2
+  - name: Wrap
+    clips:
+    - {fileID: 8300000, guid: 978594082d25b2d47ac2de491886339b, type: 3}
+    volumeScale: 0.35
+    pitchRange: {x: 1, y: 1}
+    sequencePitches:
+    - 1
+    - 1.19
+    - 1.259
+    - 1.334
+    - 1.498
+    - 1.781
+    - 2
+  - name: Throw
+    clips:
+    - {fileID: 8300000, guid: ef67589fa6cb72a4d824fa01e43a67bc, type: 3}
+    volumeScale: 1
+    pitchRange: {x: 0.95, y: 1.05}
+    sequencePitches: []
   musicSource: {fileID: 1887473813004426430}
+  musicHighPassFilter: {fileID: 9119444992973571357}
   maxSounds: 16
 --- !u!1 &6146283199751746442
 GameObject:
@@ -823,6 +850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6711678727093580898}
   - component: {fileID: 1887473813004426430}
+  - component: {fileID: 9119444992973571357}
   m_Layer: 0
   m_Name: MusicSource
   m_TagString: Untagged
@@ -858,7 +886,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.85
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -942,6 +970,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!165 &9119444992973571357
+AudioHighPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8119694207590702552}
+  m_Enabled: 1
+  m_CutoffFrequency: 10
+  m_HighpassResonanceQ: 1
 --- !u!1 &8432131333685880264
 GameObject:
   m_ObjectHideFlags: 0

@@ -5166,6 +5166,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1327739538953380233, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
+      propertyPath: sfx.Array.data[12].volumeScale
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 2486861052343689869, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.588914

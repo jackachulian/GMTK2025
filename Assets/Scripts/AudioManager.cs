@@ -2,14 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     public Sound[] music, sfx;
     public AudioSource musicSource;
+    public AudioHighPassFilter musicHighPassFilter;
 
     [SerializeField] private int maxSounds = 16;
     private List<AudioSource> sfxSources = new List<AudioSource>();
+    private Sound currentMusic = null;
 
     public static AudioManager Instance;
     private Dictionary<string, int> sfxPlayCounts = new();
@@ -28,15 +31,23 @@ public class AudioManager : MonoBehaviour
     {
         GameObject newObject = new();
         AudioSource source = newObject.AddComponent<AudioSource>();
-
-        foreach (var sfx in sfx)
-            sfxPlayCounts[sfx.name] = 0;
         
         for (int i = 0; i < maxSounds; i++)
         {
             GameObject o = Instantiate(newObject, transform);
             sfxSources.Add(o.GetComponent<AudioSource>());
         }
+
+        foreach (var sfx in sfx)
+            sfxPlayCounts[sfx.name] = 0;
+            
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        foreach (var sfx in sfx)
+            sfxPlayCounts[sfx.name] = 0;
     }
 
     public void PlayMusic(string name)
@@ -46,9 +57,11 @@ public class AudioManager : MonoBehaviour
         if (s == null) Debug.Log("Invalid music name");
         else
         {
-            musicSource.pitch = UnityEngine.Random.Range(s.pitchRange.x, s.pitchRange.y);
+            if (currentMusic?.name == s.name) return;
+
             musicSource.clip = s.Clip;
             musicSource.Play();
+            currentMusic = s;
         }
 
     }

@@ -35,6 +35,9 @@ public class LevelWrap : MonoBehaviour
         Vector2 newpos = new(x, y);
         TileBase tile = map.GetTile(map.WorldToCell(newpos));
 
+        if (pos != newpos && tile == null)
+            AudioManager.Instance.PlaySfx("Wrap");
+
         // if we will collide with a tile by wrapping, readjust
         if (tile != null)
         {
@@ -83,6 +86,9 @@ public class LevelWrap : MonoBehaviour
         Tilemap map = GameObject.Find("Tilemap").GetComponent<Tilemap>();
         Vector2 newpos = new(x, y);
         TileBase tile = map.GetTile(map.WorldToCell(newpos));
+
+        if (pos != newpos && tile == null)
+            AudioManager.Instance.PlaySfx("Wrap");
 
         // if we will collide with a tile by wrapping, readjust
         if (tile != null)

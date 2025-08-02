@@ -13,7 +13,7 @@ public class LevelSelectGrid : MonoBehaviour
             int _i = i;
             Button b = Instantiate(_levelButtonPrefab, transform).GetComponent<Button>();
             b.onClick.AddListener(() => {GameManager.Instance.SelectLevel(_i);});
-            b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (_i + 1).ToString();
+            b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (_i + 1).ToString("D2");
         }
     }
 }
