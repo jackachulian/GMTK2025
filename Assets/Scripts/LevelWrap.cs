@@ -35,6 +35,9 @@ public class LevelWrap : MonoBehaviour
         Vector2 newpos = new(x, y);
         TileBase tile = map.GetTile(map.WorldToCell(newpos));
 
+        if (pos != newpos && tile == null)
+            AudioManager.Instance.PlaySfx("Wrap");
+
         // if we will collide with a tile by wrapping, readjust
         if (tile != null)
         {
@@ -50,9 +53,6 @@ public class LevelWrap : MonoBehaviour
                 y = levelSize.y;
         }
         newpos = new(x,y);
-
-        if (pos != newpos)
-            AudioManager.Instance.PlaySfx("Wrap");
 
         return newpos;
     }
@@ -87,6 +87,9 @@ public class LevelWrap : MonoBehaviour
         Vector2 newpos = new(x, y);
         TileBase tile = map.GetTile(map.WorldToCell(newpos));
 
+        if (pos != newpos && tile == null)
+            AudioManager.Instance.PlaySfx("Wrap");
+
         // if we will collide with a tile by wrapping, readjust
         if (tile != null)
         {
@@ -102,9 +105,6 @@ public class LevelWrap : MonoBehaviour
                 y = maxY;
         }
         newpos = new(x,y);
-
-        if (pos != newpos)
-            AudioManager.Instance.PlaySfx("Wrap");
 
         return newpos; 
     }
