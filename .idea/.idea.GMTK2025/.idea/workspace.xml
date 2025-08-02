@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed8efcf1-88d2-499e-a806-122d57b856a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/inputs.aseprite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/inputs.aseprite.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tileset/down.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tileset/down.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tileset/left.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tileset/left.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tileset/right.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tileset/right.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tileset/up.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tileset/up.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Bescii-Basic SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Bescii-Basic SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/End.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/End.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/tileset.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/tileset.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tileset/Tileset.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tileset/Tileset.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level3.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +135,7 @@
       <workItem from="1754006797283" duration="24128000" />
       <workItem from="1754092049676" duration="3573000" />
       <workItem from="1754138627048" duration="1359000" />
-      <workItem from="1754145961259" duration="1698000" />
+      <workItem from="1754145961259" duration="2923000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -502,7 +489,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754148312958</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Level 2 adjustments">
+      <option name="closed" value="true" />
+      <created>1754149184973</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1754149184973</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,7 +525,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Fixed wall causing errors" />
     <MESSAGE value="Game manager and warpwall error fixes" />
     <MESSAGE value="Implemented key and lock, added level4" />
     <MESSAGE value="Added target, changed orb sprite" />
@@ -555,7 +549,8 @@
     <MESSAGE value="Adjusted many of the later levels" />
     <MESSAGE value="idk" />
     <MESSAGE value="Level 1 adjustments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Level 1 adjustments" />
+    <MESSAGE value="Level 2 adjustments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Level 2 adjustments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
