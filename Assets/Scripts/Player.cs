@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -57,6 +58,10 @@ public class Player2D : MonoBehaviour
 
     private AudioSource _wallSlideAudioSource;
 
+    private PlayerInput _playerInput;
+
+    [SerializeField] private ParticleSystem _deathParticleSystem;
+
     void Start()
     {
         GetComponent<PlayerInput>().enabled = true;
@@ -65,7 +70,10 @@ public class Player2D : MonoBehaviour
         if (shootingUnlocked) Cursor.SetCursor(GameManager.Instance.cursorShoot, new Vector2(0, 0), CursorMode.Auto);
         else Cursor.SetCursor(GameManager.Instance.cursorLocked, new Vector2(0, 0), CursorMode.Auto);
 
-        _wallSlideAudioSource = GetComponent<AudioSource>(); 
+        _wallSlideAudioSource = GetComponent<AudioSource>();
+
+        _playerInput = GetComponent<PlayerInput>();
+        _playerInput.enabled = true;
     }
 
     void Update()
@@ -241,11 +249,29 @@ public class Player2D : MonoBehaviour
 
     public void Respawn()
     {
+        if (!_playerInput.enabled) return;
         // _rigidbody.enabled = false;
-        transform.position = spawnPosition;
-        respawnedThisTick = true;
         GameManager.Instance.OnWarpCanceled(new());
+        _playerInput.enabled = false;
+        _lastDelta = Vector2.zero;
+        _animator.SetBool("dead", true);
+        AudioManager.Instance.PlaySfx("Hurt");
+        StartCoroutine(RespawnHelper());
         // _rigidbody.enabled = true;
+    }
+
+    private IEnumerator RespawnHelper()
+    {
+        yield return new WaitForSeconds(0.25f);
+        _spriteRenderer.enabled = false;
+        _deathParticleSystem.Play();
+        yield return new WaitForSeconds(0.25f);
+        transform.position = spawnPosition;
+        _animator.SetBool("dead", false);
+        respawnedThisTick = true;
+        _spriteRenderer.enabled = true;
+        _playerInput.enabled = true;
+        AudioManager.Instance.PlaySfx("Step");
     }
 
     public void SetSpawn(Vector3 pos, Vector3 rot)

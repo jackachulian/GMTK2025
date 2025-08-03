@@ -542,6 +542,12 @@ MonoBehaviour:
     volumeScale: 1
     pitchRange: {x: 0.95, y: 1.05}
     sequencePitches: []
+  - name: Hurt
+    clips:
+    - {fileID: 8300000, guid: 78f8f286afdd69346966094dccaca078, type: 3}
+    volumeScale: 0.5
+    pitchRange: {x: 1, y: 1}
+    sequencePitches: []
   musicSource: {fileID: 1887473813004426430}
   musicHighPassFilter: {fileID: 9119444992973571357}
   maxSounds: 16
