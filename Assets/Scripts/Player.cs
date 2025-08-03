@@ -265,6 +265,7 @@ public class Player2D : MonoBehaviour
         _spriteRenderer.enabled = false;
         _deathParticleSystem.Play();
         yield return new WaitForSeconds(0.25f);
+        GameManager.Instance.OnWarpCanceled(new());
         transform.position = spawnPosition;
         _animator.SetBool("dead", false);
         respawnedThisTick = true;
