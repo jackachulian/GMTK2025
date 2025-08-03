@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
 
     public event Action OnLevelChanged;
 
+    public bool IsTiming;
+    public float PlayTime;
+
     private static Level _currentLevel;
     public static Level currentLevel
     {
@@ -59,6 +62,9 @@ public class GameManager : MonoBehaviour
         actions = new InputSystemActions();
         actions.Player.Enable();
         Time.timeScale = timeScale;
+
+        PlayTime = 0f;
+        IsTiming = false;
     }
 
     private void OnEnable()
@@ -96,6 +102,13 @@ public class GameManager : MonoBehaviour
     {
         CurrentLevelIndex = 0;
         SceneManager.LoadScene(levels[0]);
+        IsTiming = true;
+        PlayTime = 0f;
+    }
+
+    public void Update()
+    {
+        if (IsTiming) PlayTime += Time.unscaledDeltaTime;
     }
 
     public void GoToMainMenu()

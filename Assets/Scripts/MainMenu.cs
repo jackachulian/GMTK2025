@@ -3,9 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private bool _resetTime = true;
     void Start()
     {
-        AudioManager.Instance.PlayMusic("None");    
+        AudioManager.Instance.PlayMusic("None");
+        GameManager.Instance.IsTiming = false;
+        if (_resetTime) GameManager.Instance.PlayTime = -1f;
     }
 
     public void PlayPressed()
