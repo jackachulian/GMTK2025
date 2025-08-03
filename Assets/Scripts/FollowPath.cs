@@ -14,10 +14,10 @@ public class FollowPath : MonoBehaviour
         initialPos = transform.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 offset = _pointOffsets[_currentPointIndex];
-        transform.position = Vector2.MoveTowards(transform.position, initialPos + offset, _speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, initialPos + offset, _speed * Time.fixedDeltaTime);
         if (Vector2.Distance(transform.position, initialPos + offset) < 0.001f)
         {
             _currentPointIndex = (_currentPointIndex + 1) % _pointOffsets.Length;

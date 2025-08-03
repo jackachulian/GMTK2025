@@ -159,7 +159,7 @@ public class Player2D : MonoBehaviour
             _spriteRenderer.flipX = true;
         else if (_moveInputDir.x > 0)
             _spriteRenderer.flipX = false;
-        
+
         _animator.SetBool(Running, _moveInputDir.magnitude > 0);
         _animator.SetBool(Grounded, grounded);
         _animator.SetFloat(YVelocity, delta.y);
@@ -243,7 +243,7 @@ public class Player2D : MonoBehaviour
         // _rigidbody.enabled = false;
         transform.position = spawnPosition;
         respawnedThisTick = true;
-
+        GameManager.Instance.OnWarpCanceled(new());
         // _rigidbody.enabled = true;
     }
 
@@ -259,7 +259,7 @@ public class Player2D : MonoBehaviour
 
     private bool GroundCheck()
     {
-        float dist = _collider.size.y * 0.56f;
+        float dist = _collider.size.y * 0.6f;
         Vector2 origin = transform.position;
         Vector2 offset = transform.right * _collider.size.x / 2f;
         return
