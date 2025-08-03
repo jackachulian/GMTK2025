@@ -26,10 +26,11 @@ public class GameManager : MonoBehaviour
 
     public event Action OnLevelChanged;
 
+    public Player2D player;
     private static Level _currentLevel;
     public static Level currentLevel
     {
-        get {return _currentLevel;}
+        get { return _currentLevel; }
         set
         {
             _currentLevel = value;
@@ -39,11 +40,12 @@ public class GameManager : MonoBehaviour
     }
 
     public Texture2D cursorLocked, cursorShoot;
-    public GameObject pauseMenu;
+    public GameObject pauseMenu, winMenu;
+    public bool winMenuOpen;
 
     [SerializeField] private Sprite[] _tileSprites;
 
-    public bool IsScrollingLevel {get {return GameObject.Find("Main Camera").GetComponent<CameraController>() != null;}}
+    public bool IsScrollingLevel { get { return GameObject.Find("Main Camera").GetComponent<CameraController>() != null; } }
 
     private void Awake()
     {
@@ -59,6 +61,8 @@ public class GameManager : MonoBehaviour
         actions = new InputSystemActions();
         actions.Player.Enable();
         Time.timeScale = timeScale;
+
+        winMenuOpen = false;
     }
 
     private void OnEnable()
@@ -111,10 +115,12 @@ public class GameManager : MonoBehaviour
 
     public void EndLevel()
     {
-        CurrentLevelIndex++;
-        Debug.Log(CurrentLevelIndex);
+        //CurrentLevelIndex++;
+        //Debug.Log(CurrentLevelIndex);
         Time.timeScale = 1f;
-        StartCoroutine(NextLevel());
+        //StartCoroutine(NextLevel());
+
+        OpenWinMenu();
     }
 
     private IEnumerator NextLevel()
@@ -127,15 +133,15 @@ public class GameManager : MonoBehaviour
 
         // create randomized list of coordinates to iterate
         List<Vector3Int> coords = new();
-        for(int i = 0; i < map.size.x; i++)
+        for (int i = 0; i < map.size.x; i++)
         {
             for (int j = 0; j < map.size.y; j++)
             {
                 coords.Add(new Vector3Int(i, j));
             }
         }
-        coords = coords.OrderBy( x => UnityEngine.Random.value ).ToList();
-        
+        coords = coords.OrderBy(x => UnityEngine.Random.value).ToList();
+
         RandomizeTilesHelper(map, coords, count, 0);
         yield return new WaitForSeconds(0.25f);
         RandomizeTilesHelper(map, coords, count, count);
@@ -163,7 +169,7 @@ public class GameManager : MonoBehaviour
         tile.sprite = _tileSprites[UnityEngine.Random.Range(0, _tileSprites.Length)];
 
         map.SetTile(
-            coord, 
+            coord,
             tile
         );
     }
@@ -173,4 +179,32 @@ public class GameManager : MonoBehaviour
         Time.timeScale = timeScale;
         pauseMenu.SetActive(false);
     }
+
+    public void CloseWinMenu()
+    {
+        winMenuOpen = false;
+        winMenu.SetActive(false);
+    }
+
+    public void OpenWinMenu()
+    {
+        winMenuOpen = true;
+        winMenu.SetActive(true);
+    }
+
+    public void ReplayLevel()
+    {
+        if (player.gameObject.transform.parent != null)
+        {
+            player.gameObject.transform.parent.transform.DetachChildren();
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ContinueWinMenu()
+    {
+        CurrentLevelIndex++;
+        StartCoroutine(NextLevel());
+    }
+
 }

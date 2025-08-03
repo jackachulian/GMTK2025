@@ -73,27 +73,35 @@ public class Player2D : MonoBehaviour
 
         _playerInput = GetComponent<PlayerInput>();
         _playerInput.enabled = true;
+
+        GameManager.Instance.player = this;
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && shootingUnlocked && maxProjectilesActive > projectilesActive)
         {
-            Shoot();
+            if(GameManager.Instance.winMenuOpen == false) Shoot();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            GameManager.Instance.pauseMenu.SetActive(true);
-            Time.timeScale = 0;
+            if (GameManager.Instance.winMenuOpen == false)
+            {
+                GameManager.Instance.pauseMenu.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
         else if (Input.GetKeyDown(KeyCode.R)) // reset scene
         {
-            if (transform.parent != null)
+            if (GameManager.Instance.winMenuOpen == false)
             {
-                transform.parent.transform.DetachChildren();
+                if (transform.parent != null)
+                {
+                    transform.parent.transform.DetachChildren();
+                }
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         
     }
