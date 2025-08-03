@@ -3605,7 +3605,7 @@ BoxCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 1, y: 0, z: 1, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3, y: 1}
     newSize: {x: 3, y: 1}
@@ -3631,6 +3631,8 @@ MonoBehaviour:
   _pointOffsets:
   - {x: 0, y: 0}
   - {x: 5, y: 0}
+  closedLoop: 1
+  _currentPointIndex: 0
 --- !u!1 &1682182787
 GameObject:
   m_ObjectHideFlags: 0
@@ -8154,7 +8156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2947123789303125289, guid: d99b82b800aa78d4da88a1ff47a13f46, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3186658801040381183, guid: d99b82b800aa78d4da88a1ff47a13f46, type: 3}
       propertyPath: m_FlipX
