@@ -11,7 +11,6 @@ public class Player2D : MonoBehaviour
     [SerializeField] BoxCollider2D _collider;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Animator _animator;
-    [SerializeField] private GameObject deathExplosion;
 
     private bool jumpHeld = false;
     private bool jumpedThisInput = false;
