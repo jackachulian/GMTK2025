@@ -13,7 +13,7 @@ public class PlayerProjectile : MonoBehaviour
 
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         spawnedTime = Time.time;
         velocity = rb.linearVelocity;
     }
@@ -36,6 +36,7 @@ public class PlayerProjectile : MonoBehaviour
 
         Debug.Log("Bounce!");
         bounces++;
+        AudioManager.Instance.PlaySfx("ProjBounce");
         if (bounces >= maxBounces)
         {
             Destroy(gameObject);

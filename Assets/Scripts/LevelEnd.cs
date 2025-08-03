@@ -14,6 +14,17 @@ public class LevelEnd : MonoBehaviour
     private Key[] keys;
     private bool unlocked;
 
+    private void Update()
+    {
+        #if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            Unlock();
+            GameObject.Find("Player").transform.position = transform.position;
+        }
+        #endif
+    }
+
     private void Start()
     {
         keys = GameObject.FindObjectsOfType<Key>();

@@ -8,7 +8,7 @@ public class Destroyable : MonoBehaviour
         Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "PlayerProjectile")
         {
-            Debug.Log("Destroy destructable!");
+            AudioManager.Instance.PlaySfx("Break");
             Destroy(gameObject);
         }
     }
