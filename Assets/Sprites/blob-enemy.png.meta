@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: c7819a26664d458428a31bb8c16e04a9
+guid: c0a3d2b206831ab4c92aa111d6bbda93
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5113850848988359095
-    second: platform_0
+      213: 2906359447100371451
+    second: blob-enemy_0
+  - first:
+      213: -6776783929212020076
+    second: blob-enemy_1
+  - first:
+      213: 9034872807072328258
+    second: blob-enemy_2
+  - first:
+      213: -7210945267451956094
+    second: blob-enemy_3
+  - first:
+      213: -6003429994223310931
+    second: blob-enemy_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +125,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: platform_0
+      name: blob-enemy_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 16, y: 0, z: 16, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94618b74fb3f709b0800000000000000
-      internalID: -5113850848988359095
+      spriteID: bf1b402c486755820800000000000000
+      internalID: 2906359447100371451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob-enemy_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49addbbdbe604f1a0800000000000000
+      internalID: -6776783929212020076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob-enemy_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24ae16003f0526d70800000000000000
+      internalID: 9034872807072328258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob-enemy_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 284fdb60c739deb90800000000000000
+      internalID: -7210945267451956094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob-enemy_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da7e4605a388faca0800000000000000
+      internalID: -6003429994223310931
       vertices: []
       indices: 
       edges: []
@@ -138,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e6c8c735691c31d41946cb074e90d1ed
+    spriteID: cbc67b4b6c719aa47a8dc7fe81c439c0
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      platform_0: -5113850848988359095
+      blob-enemy_0: 2906359447100371451
+      blob-enemy_1: -6776783929212020076
+      blob-enemy_2: 9034872807072328258
+      blob-enemy_3: -7210945267451956094
+      blob-enemy_4: -6003429994223310931
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
