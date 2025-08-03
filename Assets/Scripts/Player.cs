@@ -89,6 +89,10 @@ public class Player2D : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.R)) // reset scene
         {
+            if (transform.parent != null)
+            {
+                transform.parent.transform.DetachChildren();
+            }
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         
