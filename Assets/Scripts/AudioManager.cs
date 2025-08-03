@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
 
         foreach (var sfx in sfx)
             sfxPlayCounts[sfx.name] = 0;
-            
+
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -101,7 +101,7 @@ public class Sound
 {
     public string name;
     public AudioClip[] clips;
-    public AudioClip Clip {get => clips[UnityEngine.Random.Range(0, clips.Length)]; }
+    public AudioClip Clip {get => (clips.Length > 0 ) ? clips[UnityEngine.Random.Range(0, clips.Length)] : null; }
     public float volumeScale = 1f;
     public Vector2 pitchRange = Vector2.one;
     public float[] sequencePitches;

@@ -421,6 +421,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music:
+  - name: None
+    clips: []
+    volumeScale: 0
+    pitchRange: {x: 0, y: 0}
+    sequencePitches: []
   - name: BGM1
     clips:
     - {fileID: 8300000, guid: bd90b414bc2e3f24d876ed09978c9e48, type: 3}
