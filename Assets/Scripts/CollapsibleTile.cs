@@ -26,7 +26,7 @@ public class CollapsibleTile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent<Player2D>(out var player))
+        if (collision.gameObject.TryGetComponent<Player2D>(out var player) || collision.gameObject.TryGetComponent<PlayerProjectile>(out var proj))
         {
             StartCoroutine(CollapseAfterDelay());
         }
