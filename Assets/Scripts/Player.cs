@@ -248,6 +248,7 @@ public class Player2D : MonoBehaviour
 
     public void Respawn()
     {
+        if (!_playerInput.enabled) return;
         // _rigidbody.enabled = false;
         GameManager.Instance.OnWarpCanceled(new());
         _playerInput.enabled = false;
