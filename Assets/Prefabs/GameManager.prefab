@@ -549,6 +549,12 @@ MonoBehaviour:
     volumeScale: 0.5
     pitchRange: {x: 1, y: 1}
     sequencePitches: []
+  - name: Break
+    clips:
+    - {fileID: 8300000, guid: ea32245d3e51b504b897ff10cd0d2359, type: 3}
+    volumeScale: 0.5
+    pitchRange: {x: 0.6, y: 0.8}
+    sequencePitches: []
   musicSource: {fileID: 1887473813004426430}
   musicHighPassFilter: {fileID: 9119444992973571357}
   maxSounds: 16
