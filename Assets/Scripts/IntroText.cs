@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IntroText : MonoBehaviour
 {
@@ -8,7 +9,10 @@ public class IntroText : MonoBehaviour
     {
         GetComponent<TextMeshProUGUI>().text = (GameManager.Instance.CurrentLevelIndex + 1).ToString("D2");
         gameObject.SetActive(true);
-        Invoke(nameof(Hide), _delay);
+        if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "End") 
+            gameObject.SetActive(false);
+        else
+            Invoke(nameof(Hide), _delay);
     }
 
     private void Hide()
