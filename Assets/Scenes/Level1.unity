@@ -1840,6 +1840,14 @@ PrefabInstance:
       value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 5654165149594216613, guid: d99b82b800aa78d4da88a1ff47a13f46, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654165149594216613, guid: d99b82b800aa78d4da88a1ff47a13f46, type: 3}
+      propertyPath: orthographic size
+      value: 8.96875
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654165149594216613, guid: d99b82b800aa78d4da88a1ff47a13f46, type: 3}
       propertyPath: m_BackGroundColor.b
       value: 0
       objectReference: {fileID: 0}
@@ -5170,6 +5178,22 @@ PrefabInstance:
       propertyPath: sfx.Array.data[12].volumeScale
       value: 0.35
       objectReference: {fileID: 0}
+    - target: {fileID: 1839794816363094898, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 7627a6c189059734b82a1cf95a60d7cd, type: 3}
+    - target: {fileID: 1839794816363094898, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839794816363094898, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839794816363094898, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2486861052343689869, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.588914
@@ -5274,9 +5298,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 6496538619659418529, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6780766564508783844, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910348276294962876, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7881347186448252686, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5297,6 +5329,10 @@ PrefabInstance:
     - target: {fileID: 7881347186448252686, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8543902790861800122, guid: 655d35dc8daa91d4ea61723125084415, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

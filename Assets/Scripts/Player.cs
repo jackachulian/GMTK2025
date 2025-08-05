@@ -88,6 +88,7 @@ public class Player2D : MonoBehaviour
         {
             if (GameManager.Instance.winMenuOpen == false)
             {
+                GameManager.Instance.pauseMenu.GetComponent<Canvas>().worldCamera = Camera.main;
                 GameManager.Instance.pauseMenu.SetActive(true);
                 Time.timeScale = 0;
             }

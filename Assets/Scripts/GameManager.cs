@@ -201,6 +201,7 @@ public class GameManager : MonoBehaviour
     public void OpenWinMenu()
     {
         winMenuOpen = true;
+        winMenu.GetComponent<Canvas>().worldCamera = Camera.main;
         winMenu.SetActive(true);
     }
 
