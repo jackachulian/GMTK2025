@@ -71,7 +71,7 @@ MonoBehaviour:
   _wallSlideSpeed: -4.5
   _groundMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 257
   _deathParticleSystem: {fileID: 8538603324575049919}
 --- !u!114 &5401002894563395118
 MonoBehaviour:
