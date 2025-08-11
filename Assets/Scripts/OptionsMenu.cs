@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -22,7 +23,17 @@ public class OptionsMenu : MonoBehaviour
     {
         GetComponent<Canvas>().worldCamera = Camera.main;
         SetGameColor();
-        // transform.Find("ColorSelect").GetComponent<Dial>().OnValueChanged += (int v) => SetGameColor();
+
+    }
+
+    public void SetMusicVolume(int v)
+    {
+        AudioManager.Instance.musicSource.volume = v / 10f;
+    }
+
+    public void PlaySound(string s)
+    {
+        AudioManager.Instance.PlaySfx(s);
     }
 
     public void SetGameColor()

@@ -7,9 +7,12 @@ using System;
 public class Dial : MonoBehaviour, IMoveHandler
 {
     [Header("Range")]
-    [SerializeField] private TMPro.TMP_Text valueText;
     [SerializeField] private int min;
     [SerializeField] private int max;
+
+    [Header("Display")]
+    [SerializeField] private TMPro.TMP_Text valueText;
+    [SerializeField] private Image valueFillImage;
 
     public int Value
     {
@@ -17,7 +20,9 @@ public class Dial : MonoBehaviour, IMoveHandler
         set
         {
             _value = Math.Clamp(value, min, max);
-            valueText.text = useValueNames ? valueNames[_value] : "" + _value;
+            if (valueText) valueText.text = useValueNames ? valueNames[_value] : "" + _value;
+            if (valueFillImage) valueFillImage.fillAmount = (float)(_value - min) / (max - min);
+            
             // OnValueChanged?.Invoke(delta);
             onValueChanged.Invoke(_value);
         }
@@ -43,8 +48,8 @@ public class Dial : MonoBehaviour, IMoveHandler
     public void Awake()
     {
         // _value = Math.Clamp(_value, min, max);
-        valueText.text = useValueNames ? valueNames[_value - min] : "" + _value;
-
+        if (valueText) valueText.text = useValueNames ? valueNames[_value - min] : "" + _value;
+        if (valueFillImage) valueFillImage.fillAmount = (float)(_value - min) / (max - min);
         // setup events
         if (negativeButton) negativeButton.onClick.AddListener(() => ChangeSelection(-1));
         if (positiveButton) positiveButton.onClick.AddListener(() => ChangeSelection(1));

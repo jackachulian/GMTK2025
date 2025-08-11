@@ -120,7 +120,7 @@ public class Player2D : MonoBehaviour
 
         _animator.SetBool("wallslide", inWallslide);
 
-        _wallSlideAudioSource.volume = inWallslide ? 0.5f : 0f;
+        _wallSlideAudioSource.volume = (inWallslide ? 0.5f : 0f) * (PlayerPrefs.GetInt("sfx-volume") / 10f);
 
         _wallJumpTimer -= Time.deltaTime;
 

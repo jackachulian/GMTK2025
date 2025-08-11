@@ -51,7 +51,7 @@ public class WarpWallVisual : MonoBehaviour
             float a = Mathf.Lerp(spriteLeft.sharedMaterial.GetFloat("_AlphaScale"), targetAlpha, t);
             spriteLeft.sharedMaterial.SetFloat("_AlphaScale", a);
             spriteBottom.sharedMaterial.SetFloat("_AlphaScale", a);
-            loopAudioSource.volume = a * 0.25f;
+            loopAudioSource.volume = a * 0.25f * (PlayerPrefs.GetInt("sfx-volume") / 10f);
             AudioManager.Instance.musicHighPassFilter.cutoffFrequency = a * _highPassAmount;
         }
     }

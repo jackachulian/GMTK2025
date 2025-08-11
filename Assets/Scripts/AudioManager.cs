@@ -53,6 +53,7 @@ public class AudioManager : MonoBehaviour
     public void PlayMusic(string name)
     {
         Sound s = Array.Find(music, x => x.name == name);
+        musicSource.volume = PlayerPrefs.GetInt("music-volume") / 10f;
 
         if (s == null) Debug.Log("Invalid music name");
         else
@@ -63,13 +64,11 @@ public class AudioManager : MonoBehaviour
             musicSource.Play();
             currentMusic = s;
         }
-
     }
 
     public void PlaySfx(string name)
     {
         Sound s = Array.Find(sfx, x => x.name == name);
-
         if (s == null) Debug.Log("Invalid sfx name");
         else
         {
@@ -87,7 +86,8 @@ public class AudioManager : MonoBehaviour
             }
             
             sfxSource.clip = s.Clip;
-            sfxSource.volume = s.volumeScale;
+            // TODO Change this to use unity audio groups
+            sfxSource.volume = s.volumeScale * (PlayerPrefs.GetInt("sfx-volume") / 10f);
             sfxSource.Play();
             sfxPlayCounts[name]++;
         }
