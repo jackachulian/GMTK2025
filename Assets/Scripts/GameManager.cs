@@ -192,6 +192,11 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
+    public void OpenOptionMenu()
+    {
+        GameObject.Find("Option Canvas").GetComponent<OptionsMenu>().SetEnabled(true);
+    }
+
     public void CloseWinMenu()
     {
         winMenuOpen = false;
