@@ -60,7 +60,7 @@ public class Dial : MonoBehaviour, IMoveHandler
     {
         if (delta != 0)
         {
-            Value = loop ? delta + Value : (delta + Value) % (max - min) + min;
+            Value = !loop ? delta + Value : (delta + Value) % (max - min) + min;
         }
     }
 }
