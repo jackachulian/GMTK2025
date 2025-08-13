@@ -42,11 +42,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public Texture2D cursorLocked, cursorShoot;
+    public Sprite cursorLocked, cursorShoot;
     public GameObject pauseMenu, winMenu;
     public bool winMenuOpen;
 
     [SerializeField] private Sprite[] _tileSprites;
+    [field: SerializeField] public UnityEngine.UI.Image Cursor {get; private set;}
 
     public bool IsScrollingLevel { get { return GameObject.Find("Main Camera").GetComponent<CameraController>() != null; } }
 
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
         PlayTime = 0f;
         IsTiming = false;
         winMenuOpen = false;
+        UnityEngine.Cursor.visible = false;
     }
 
     private void OnEnable()
@@ -112,6 +114,10 @@ public class GameManager : MonoBehaviour
     public void Update()
     {
         if (IsTiming) PlayTime += Time.unscaledDeltaTime;
+
+        Vector3 p = Input.mousePosition;
+        p.z = 10f;
+        Cursor.transform.position = Camera.main.ScreenToWorldPoint(p);
     }
 
     public void GoToMainMenu()

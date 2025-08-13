@@ -69,15 +69,17 @@ public class Player2D : MonoBehaviour
         GetComponent<PlayerInput>().enabled = true;
         spawnPosition = transform.position;
 
-        if (shootingUnlocked) Cursor.SetCursor(GameManager.Instance.cursorShoot, new Vector2(0, 0), CursorMode.Auto);
-        else Cursor.SetCursor(GameManager.Instance.cursorLocked, new Vector2(0, 0), CursorMode.Auto);
-
         _wallSlideAudioSource = GetComponent<AudioSource>();
 
         _playerInput = GetComponent<PlayerInput>();
         _playerInput.enabled = true;
 
         GameManager.Instance.player = this;
+
+        GameManager.Instance.Cursor.sprite = shootingUnlocked ? 
+            GameManager.Instance.cursorShoot : 
+            GameManager.Instance.cursorLocked;
+        GameManager.Instance.Cursor.canvas.worldCamera = Camera.main;
     }
 
     void Update()
