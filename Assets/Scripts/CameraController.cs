@@ -15,13 +15,17 @@ public class CameraController : MonoBehaviour
     {
         // Get component references
         _playerTransform = GameObject.Find("Player").transform;
+    }
 
+    public void CalculateLevelBounds()
+    {
+        Debug.Log("Level Bounds Calculation");
         var level = FindFirstObjectByType<Level>();
         _levelBounds = new Bounds(level.levelSize / 2, level.levelSize);
 
         // calculate min and max positions
         var vertExtent = 8.4375f;	
-    	var horzExtent = vertExtent * Screen.width / Screen.height;
+    	var horzExtent = vertExtent * 16f / 9f;
 
         _minPos.x = _levelBounds.min.x + horzExtent;
         _minPos.y = _levelBounds.min.y + vertExtent;

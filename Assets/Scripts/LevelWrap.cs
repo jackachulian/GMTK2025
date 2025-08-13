@@ -64,7 +64,7 @@ public class LevelWrap : MonoBehaviour
         var levelSize = GameManager.currentLevel.levelSize;
 
         var vertExtent = 8.4375f;	
-    	var horzExtent = vertExtent * Screen.width / Screen.height;
+    	var horzExtent = vertExtent * 16f / 9f;
 
         var minX = Camera.main.transform.position.x - horzExtent;
         var maxX = Camera.main.transform.position.x + horzExtent;

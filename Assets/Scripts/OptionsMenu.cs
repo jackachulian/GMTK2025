@@ -104,6 +104,8 @@ public class OptionsMenu : MonoBehaviour
 
             Camera.main.rect = rect;
         }
+
+        Camera.main.GetComponent<CameraController>().CalculateLevelBounds();
     }
 
     public void SetScreenMode(int mode)
