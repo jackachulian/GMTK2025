@@ -132,7 +132,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         //StartCoroutine(NextLevel());
 
-        OpenWinMenu();
+        if (!IsTiming) OpenWinMenu();
+        else ContinueWinMenu();
     }
 
     private IEnumerator NextLevel()
