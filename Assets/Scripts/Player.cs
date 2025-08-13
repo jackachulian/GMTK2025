@@ -16,12 +16,15 @@ public class Player2D : MonoBehaviour
     private bool jumpedThisInput = false;
     private bool groundedLastTick = false;
     private bool grounded = false;
+    private bool shouldTryShoot = false;
 
     public bool shootingUnlocked; // is set to true if you are allowed to shoot
     [SerializeField] private float projectileSpeed;
     [SerializeField] private Rigidbody2D projectile;
     public int projectilesActive; // how many projectiles you currently have spawned
     [SerializeField] private int maxProjectilesActive; // the max of how many projectiles you are allowed to have spawned at once
+    [SerializeField] private float shootInterval;
+    private float _shootTimer;
 
     [SerializeField] private float _groundAcceleration;
     [SerializeField] private float _groundMaxVel;
@@ -79,11 +82,6 @@ public class Player2D : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && shootingUnlocked && maxProjectilesActive > projectilesActive)
-        {
-            if(GameManager.Instance.winMenuOpen == false) Shoot();
-        }
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameManager.Instance.winMenuOpen == false)
@@ -123,6 +121,9 @@ public class Player2D : MonoBehaviour
         _wallSlideAudioSource.volume = (inWallslide ? 0.5f : 0f) * (PlayerPrefs.GetInt("sfx-volume") / 10f);
 
         _wallJumpTimer -= Time.deltaTime;
+        _shootTimer -= Time.deltaTime;
+
+        if (shouldTryShoot) TryShoot();
 
         // Player movement
         Vector2 delta = Move(_moveInputDir, _lastDelta + applyForce);
@@ -297,6 +298,11 @@ public class Player2D : MonoBehaviour
 
     }
 
+    public void OnAttack(InputValue value)
+    {
+        shouldTryShoot = value.isPressed;
+    }
+    
     private bool GroundCheck()
     {
         float dist = _collider.size.y * 0.6f;
@@ -315,9 +321,11 @@ public class Player2D : MonoBehaviour
             Physics2D.Raycast(transform.position, Vector2.right * (_spriteRenderer.flipX ? -1 : 1), dist, _groundMask);
     }
 
-    private void Shoot()
+    private void TryShoot()
     {
-
+        if (_shootTimer > 0 || !shootingUnlocked || maxProjectilesActive <= projectilesActive)
+            return;
+        
         // setting direction
         Vector3 shootDirection;
         shootDirection = Input.mousePosition;
@@ -331,8 +339,6 @@ public class Player2D : MonoBehaviour
         projectileInstance.gameObject.GetComponent<PlayerProjectile>().player = this;
         projectilesActive++;
         AudioManager.Instance.PlaySfx("Throw");
-
-
+        _shootTimer = shootInterval;
     }
-
 }
