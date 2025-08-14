@@ -772,6 +772,7 @@ GameObject:
   - component: {fileID: 1309926144742256538}
   - component: {fileID: 7123693419304380617}
   - component: {fileID: 9109164345848846301}
+  - component: {fileID: 8347842054467796839}
   m_Layer: 5
   m_Name: Video Mode
   m_TagString: Untagged
@@ -872,6 +873,18 @@ MonoBehaviour:
   slider: {fileID: 0}
   toggle: {fileID: 0}
   dial: {fileID: 7123693419304380617}
+--- !u!114 &8347842054467796839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829056836611710395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e187e9d6610acf048892664670cba3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1846725750946073805
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,6 +2907,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2199862606080430498}
+  - component: {fileID: 5123588183271932595}
   m_Layer: 5
   m_Name: Resolution
   m_TagString: Untagged
@@ -2922,6 +2936,18 @@ RectTransform:
   m_AnchoredPosition: {x: 430, y: -165}
   m_SizeDelta: {x: 860, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5123588183271932595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4637034063663968822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e187e9d6610acf048892664670cba3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4656581127893068779
 GameObject:
   m_ObjectHideFlags: 0
