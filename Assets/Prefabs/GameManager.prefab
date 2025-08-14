@@ -1324,10 +1324,11 @@ MonoBehaviour:
     pitchRange: {x: 1, y: 1}
     sequencePitches:
     - 1
-    - 1.19
+    - 1.122
     - 1.259
     - 1.334
     - 1.498
+    - 1.682
     - 1.781
     - 2
   - name: Unlock
@@ -1355,10 +1356,11 @@ MonoBehaviour:
     pitchRange: {x: 1, y: 1}
     sequencePitches:
     - 1
-    - 1.19
+    - 1.122
     - 1.259
     - 1.334
     - 1.498
+    - 1.682
     - 1.781
     - 2
   - name: Wrap
@@ -1368,10 +1370,11 @@ MonoBehaviour:
     pitchRange: {x: 1, y: 1}
     sequencePitches:
     - 1
-    - 1.19
+    - 1.122
     - 1.259
     - 1.334
     - 1.498
+    - 1.682
     - 1.781
     - 2
   - name: Throw
